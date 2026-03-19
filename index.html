@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DriftCam — Drone Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="style.css?v=3">
+</head>
+<body>
+
+<!-- ============================
+     NAV
+=============================== -->
+<nav class="navbar">
+  <div class="navbar-inner">
+    <div class="nav-logo">
+      <img src="https://www.figma.com/api/mcp/asset/32bbad02-8389-4d19-aa8d-824cb8f95c72" alt="DriftCam Logo">
+    </div>
+    <ul class="nav-links">
+      <li>Camera Drones</li>
+      <li>Handhelds</li>
+      <li>Power</li>
+      <li>Specialized</li>
+      <li>Explore</li>
+      <li>Support</li>
+      <li>Where to Buy</li>
+    </ul>
+    <div class="nav-actions">
+      <!-- Search icon -->
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      <!-- User icon -->
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+      </svg>
+      <button class="store-btn">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_storefront)">
+            <path d="M21.9 8.89L20.85 4.52C20.63 3.62 19.85 3 18.94 3H5.05001C4.15001 3 3.36001 3.63 3.15001 4.52L2.10001 8.89C1.86001 9.91 2.08001 10.95 2.72001 11.77C2.80001 11.88 2.91001 11.96 3.00001 12.06V19C3.00001 20.1 3.90001 21 5.00001 21H19C20.1 21 21 20.1 21 19V12.06C21.09 11.97 21.2 11.88 21.28 11.78C21.92 10.96 22.15 9.91 21.9 8.89ZM18.91 4.99L19.96 9.36C20.06 9.78 19.97 10.2 19.71 10.53C19.57 10.71 19.27 11 18.77 11C18.16 11 17.63 10.51 17.56 9.86L16.98 5L18.91 4.99ZM13 5H14.96L15.5 9.52C15.55 9.91 15.43 10.3 15.17 10.59C14.95 10.85 14.63 11 14.22 11C13.55 11 13 10.41 13 9.69V5ZM8.49001 9.52L9.04001 5H11V9.69C11 10.41 10.45 11 9.71001 11C9.37001 11 9.06001 10.85 8.82001 10.59C8.57001 10.3 8.45001 9.91 8.49001 9.52ZM4.04001 9.36L5.05001 5H7.02001L6.44001 9.86C6.36001 10.51 5.84001 11 5.23001 11C4.74001 11 4.43001 10.71 4.30001 10.53C4.03001 10.21 3.94001 9.78 4.04001 9.36ZM5.00001 19V12.97C5.08001 12.98 5.15001 13 5.23001 13C6.10001 13 6.89001 12.64 7.47001 12.05C8.07001 12.65 8.87001 13 9.78001 13C10.65 13 11.43 12.64 12.01 12.07C12.6 12.64 13.4 13 14.3 13C15.14 13 15.94 12.65 16.54 12.05C17.12 12.64 17.91 13 18.78 13C18.86 13 18.93 12.98 19.01 12.97V19H5.00001Z" fill="white"/>
+          </g>
+          <defs>
+            <clipPath id="clip0_storefront"><rect width="24" height="24" fill="white"/></clipPath>
+          </defs>
+        </svg>
+        <span>Store</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Scroll-animated floating drone (fixed, moves via JS) -->
+<div id="scrollDrone" class="scroll-drone">
+  <img src="assets/images/drone-main.png" alt="DriftCam Drone">
+</div>
+
+<!-- ============================
+     SECTION 1: HERO — DriftCam
+=============================== -->
+<section class="hero-section">
+  <div class="hero-title">DriftCam</div>
+</section>
+
+<!-- Fixed scroll indicator -->
+<div class="scroll-indicator">
+  <span>Reimagining Drone Simplicity Since 2025</span>
+  <div class="scroll-right">
+    <span>SCROLL DOWN</span>
+    <div class="scroll-line"><div class="scroll-line-fill"></div></div>
+    <span>00%</span>
+  </div>
+</div>
+
+<!-- ============================
+     SECTION 2: 작품 설명
+=============================== -->
+<section class="description-section">
+  <!-- 배경 글로우 ellipse -->
+  <div class="desc-ellipse">
+    <img src="https://www.figma.com/api/mcp/asset/128938ee-9d00-400f-9d72-3b267155b6b4" alt="">
+  </div>
+
+  <!-- 좌측 annotation 라인 -->
+  <div class="desc-anno-left">
+    <img src="https://www.figma.com/api/mcp/asset/c4be5b83-6283-4b95-b333-6003cccc8c4e" alt="">
+  </div>
+
+  <!-- 우측 annotation 라인 (180도 회전) -->
+  <div class="desc-anno-right">
+    <img src="https://www.figma.com/api/mcp/asset/3b8a80f9-b85e-4a17-9727-54a0cc618b2d" alt="">
+  </div>
+
+  <!-- 좌측 텍스트 블록: Mini + Mastery -->
+  <div class="desc-block-left">
+    <img src="https://www.figma.com/api/mcp/asset/3adbedd2-513d-4170-b8ea-85da92e2fb15" alt="hard drive icon" class="desc-block-icon">
+    <h3 class="desc-heading">Mini + Mastery</h3>
+    <p class="desc-body">DJI Mini 4 Pro is the most advanced mini drone from DJI,<br>
+    featuring pro-level imaging, full-range obstacle sensing,<br>
+    ActiveTrack 360° with Manual mode, and 20 km FHD<br>
+    transmission — perfect for both pros and beginners.</p>
+  </div>
+
+  <!-- 우측 텍스트 블록: Light & Free -->
+  <div class="desc-block-right">
+    <img src="https://www.figma.com/api/mcp/asset/843d4214-6c2a-4e4a-b57e-4439871da749" alt="battery icon" class="desc-block-icon desc-block-icon-rotate">
+    <h3 class="desc-heading">Light &amp; Free</h3>
+    <p class="desc-body">Whenever inspiration strikes, take off with the Mini 4 Pro.<br>
+    Weighing under 249g, it's easy to carry and fly without<br>
+    extra tests in most places.</p>
+  </div>
+</section>
+
+<!-- ============================
+     SECTION 3: HIGH-DEF IMAGING
+=============================== -->
+<section class="highdef-section">
+  <!-- 둥근 배경 컨테이너 -->
+  <div class="highdef-inner">
+    <video autoplay loop muted playsinline>
+      <source src="assets/videos/highdef-imaging.webm" type="video/webm">
+    </video>
+  </div>
+  <!-- 타이틀 -->
+  <h2 class="highdef-title highdef-title-1">High-Def</h2>
+  <h2 class="highdef-title highdef-title-2">Imaging</h2>
+  <!-- 설명 텍스트 -->
+  <div class="highdef-desc">
+    <p>Capture more complex details with</p>
+    <p>Mini 4 Pro's 1/1.3" CMOS sensor,</p>
+    <p>Dual Native ISO Fusion, and f/1.7 aperture,</p>
+    <p>delivering high dynamic range for</p>
+    <p>stunning results.</p>
+  </div>
+</section>
+
+<!-- ============================
+     SECTION 4: MAX VISUAL POWER (Feature Carousel)
+=============================== -->
+<section class="features-section">
+
+  <!-- 좌: 이미지 슬라이더 (자체 프레임 내에서 슬라이드) -->
+  <div class="feat-img-panel">
+    <div class="feat-img-track" id="featImgTrack">
+      <div class="feat-img-slide"><img src="assets/images/feature-1.jpg" alt="1"></div>
+      <div class="feat-img-slide"><img src="assets/images/feature-2.jpg" alt="2"></div>
+      <div class="feat-img-slide"><img src="assets/images/feature-3.jpg" alt="3"></div>
+      <div class="feat-img-slide"><img src="assets/images/feature-4.jpg" alt="4"></div>
+      <div class="feat-img-slide"><img src="assets/images/feature-5.jpg" alt="5"></div>
+      <!-- 클론: 무한 루프용 -->
+      <div class="feat-img-slide"><img src="assets/images/feature-1.jpg" alt="1-clone"></div>
+    </div>
+  </div>
+
+  <!-- 우: 동영상 슬라이더 (자체 프레임 내에서 슬라이드) -->
+  <div class="feat-vid-panel">
+    <div class="feat-vid-track" id="featVidTrack">
+      <div class="feat-vid-slide"><video autoplay loop muted playsinline><source src="assets/videos/feature-1.webm" type="video/webm"></video></div>
+      <div class="feat-vid-slide"><video autoplay loop muted playsinline><source src="assets/videos/feature-2.webm" type="video/webm"></video></div>
+      <div class="feat-vid-slide"><video autoplay loop muted playsinline><source src="assets/videos/feature-3.webm" type="video/webm"></video></div>
+      <div class="feat-vid-slide"><video autoplay loop muted playsinline><source src="assets/videos/feature-4.webm" type="video/webm"></video></div>
+      <div class="feat-vid-slide"><video autoplay loop muted playsinline><source src="assets/videos/feature-5.webm" type="video/webm"></video></div>
+      <!-- 클론: 무한 루프용 -->
+      <div class="feat-vid-slide"><video autoplay loop muted playsinline><source src="assets/videos/feature-1.webm" type="video/webm"></video></div>
+    </div>
+  </div>
+
+  <!-- 고정 텍스트 영역 -->
+  <p class="feature-label">MAX VISUAL POWER</p>
+  <h2 class="feature-title">4K/60fps HDR</h2>
+  <img class="feature-mode-icon" src="iCON/Mode night.svg" alt="Mode Night">
+  <div class="feature-desc">
+    <p>Capture more complex details with</p>
+    <p>Mini 4 Pro's 1/1.3" CMOS sensor,</p>
+    <p>Dual Native ISO Fusion, and f/1.7 aperture,</p>
+    <p>delivering high dynamic range for</p>
+    <p>stunning results.</p>
+  </div>
+
+  <!-- 슬라이드 인디케이터 -->
+  <div class="features-indicators" id="featuresIndicators">
+    <button class="feat-dot active" data-idx="0"></button>
+    <button class="feat-dot" data-idx="1"></button>
+    <button class="feat-dot" data-idx="2"></button>
+    <button class="feat-dot" data-idx="3"></button>
+    <button class="feat-dot" data-idx="4"></button>
+  </div>
+
+</section>
+
+<!-- ============================
+     SECTION 5: RAW-SOME PHOTOS
+=============================== -->
+<section class="raw-section">
+  <p class="raw-title">RAW-SOME PHOTOS</p>
+  <div class="raw-gallery-outer">
+    <div class="raw-gallery-track" id="rawGallery">
+      <div class="raw-item active">
+        <img src="https://www.figma.com/api/mcp/asset/625196ae-344c-454d-bbc5-ecade0808cef" alt="RAW 1">
+      </div>
+      <div class="raw-item">
+        <img src="https://www.figma.com/api/mcp/asset/398efd9a-0560-4ab3-9d00-50eb429eccd2" alt="RAW 2">
+      </div>
+      <div class="raw-item">
+        <img src="https://www.figma.com/api/mcp/asset/8e6704bb-e63b-4f64-810f-8ced308dd4ab" alt="RAW 3">
+      </div>
+      <div class="raw-item">
+        <img src="https://www.figma.com/api/mcp/asset/0b86e8d7-8051-450b-ab6f-e049bb339802" alt="RAW 4">
+      </div>
+      <div class="raw-item">
+        <img src="https://www.figma.com/api/mcp/asset/c321f70f-a2b7-4048-98b1-1587162e37b8" alt="RAW 5">
+      </div>
+    </div>
+    <button class="raw-btn raw-prev raw-hidden" id="rawPrev">
+      <img src="https://www.figma.com/api/mcp/asset/91e42885-9bee-47ef-9644-d84ac019727d" alt="prev">
+    </button>
+    <button class="raw-btn raw-next" id="rawNext">
+      <img src="https://www.figma.com/api/mcp/asset/91e42885-9bee-47ef-9644-d84ac019727d" alt="next">
+    </button>
+  </div>
+</section>
+
+<!-- ============================
+     SECTION 6: FEATURE ACCORDION
+=============================== -->
+<section class="accordion-section">
+  <div class="accordion-list">
+    <div class="accordion-item" data-index="0">
+      <div class="accordion-inner">
+        <div class="accordion-header">
+          <span class="accordion-num">01</span>
+          <h2 class="accordion-title">True Vertical Shooting</h2>
+        </div>
+        <p class="accordion-desc">Capture in vertical mode optimized for social media and mobile viewing,<br>perfect for sharing on the go.</p>
+        <div class="accordion-img-wrap">
+          <video src="assets/videos/vertical-shooting.webm" autoplay loop muted playsinline></video>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-divider"></div>
+    <div class="accordion-item" data-index="1">
+      <div class="accordion-inner">
+        <div class="accordion-header">
+          <span class="accordion-num">02</span>
+          <h2 class="accordion-title">Large-Angle Tilt</h2>
+        </div>
+        <p class="accordion-desc">Achieve ultra-smooth camera motion with a 60° max tilt angle,<br>unlocking greater cinematic potential.</p>
+        <div class="accordion-img-wrap">
+          <video src="assets/videos/large-angle-tilt.webm" autoplay loop muted playsinline></video>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-divider"></div>
+    <div class="accordion-item" data-index="2">
+      <div class="accordion-inner">
+        <div class="accordion-header">
+          <span class="accordion-num">03</span>
+          <h2 class="accordion-title">Digital Zoom</h2>
+        </div>
+        <p class="accordion-desc">Capture distant subjects with ease using up to 3x zoom<br>for photos and 4x zoom for video.</p>
+        <div class="accordion-img-wrap">
+          <video src="assets/videos/digital-zoom.webm" autoplay loop muted playsinline></video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     SECTION 7: INTUVECTA / ENHANSERA
+=============================== -->
+<section class="flight-section">
+  <img src="https://www.figma.com/api/mcp/asset/7e4496fe-e2f3-4c1d-8287-8db65b619ffd" alt="Flight" class="flight-bg">
+  <div class="flight-text">
+    <h2 class="flight-word">Intuvecta</h2>
+    <h2 class="flight-word">Enhansera</h2>
+  </div>
+</section>
+
+<!-- ============================
+     SECTION 8: GLIDE SMOOTH / TRACK MOTION
+=============================== -->
+<div class="motion-scroll-wrap">
+  <section class="motion-section">
+    <h2 class="motion-title">Glide smooth and true!</h2>
+    <div class="motion-media">
+      <video src="assets/videos/flight-stability.webm" autoplay loop muted playsinline></video>
+    </div>
+    <h2 class="motion-title motion-title-right">Track motion sharply!</h2>
+    <p class="motion-desc">
+      Omnidirectional obstacle sensing makes the Mini 4 Pro safer, using four wide-angle and two downward<br>
+      vision sensors to detect obstacles from all angles. APAS adds safety with automatic braking and bypassing.
+    </p>
+  </section>
+</div>
+
+<!-- ============================
+     SECTION 9: BATTERY
+=============================== -->
+<section class="spec-section battery-section">
+  <div class="spec-left">
+    <span class="spec-num">01</span>
+    <h2 class="spec-heading">Fly Even Longer,<br>Create More</h2>
+    <div class="spec-body">
+      <p>Focus on creation, not battery life,<br>
+      with Mini 4 Pro's Intelligent Flight<br>
+      Battery — up to 34 mins of flight,<br>
+      or 45 mins with the Plus version.</p>
+    </div>
+    <div class="spec-stats">
+      <div class="spec-stat">
+        <span class="spec-value">34<span class="spec-unit">Min</span></span>
+        <span class="spec-label">Intelligent<br>Flight Battery</span>
+      </div>
+      <div class="spec-stat">
+        <span class="spec-value">45<span class="spec-unit">Min</span></span>
+        <span class="spec-label">Intelligent Flight<br>Battery Plus</span>
+      </div>
+    </div>
+  </div>
+  <div class="spec-right">
+    <div class="drone-showcase">
+      <img src="https://www.figma.com/api/mcp/asset/eb2a4921-9aac-4637-ba6f-3b7e401c1167" alt="Battery Drone" class="drone-img">
+    </div>
+  </div>
+  <div class="battery-shadow">
+    <img src="https://www.figma.com/api/mcp/asset/be823307-429a-4912-9296-9b9086bed9df" alt="">
+  </div>
+</section>
+
+<!-- ============================
+     SECTION 10: 20KM VIDEO TRANSMISSION
+=============================== -->
+<section class="spec-section transmission-section">
+  <div class="spec-left">
+    <span class="spec-num">02</span>
+    <h2 class="spec-heading">20 km Video<br>Transmission</h2>
+    <div class="spec-body">
+      <p>Mini 4 Pro features DJI's O4 video<br>
+      transmission. Enjoy ultra-responsive<br>
+      control and smooth 1080p/60fps FHD<br>
+      live feeds from distances of up to 20 km.</p>
+    </div>
+    <div class="spec-stats">
+      <div class="spec-stat">
+        <div class="trans-stat-value">
+          <span class="trans-num">20</span><span class="trans-unit">km/h</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="spec-right">
+    <div class="drone-showcase">
+      <img src="https://www.figma.com/api/mcp/asset/8d244919-bcca-47db-86b1-36683d4c73c5" alt="Transmission Drone" class="drone-img">
+    </div>
+  </div>
+  <div class="transmission-shadow">
+    <img src="https://www.figma.com/api/mcp/asset/868b3231-a6d5-4617-bc37-36a227e63c6a" alt="">
+  </div>
+</section>
+
+<!-- ============================
+     SECTION 11: DELIVER A MASTERPIECE
+=============================== -->
+<div class="masterpiece-scroll-wrap">
+  <section class="masterpiece-section">
+    <h2 class="masterpiece-title">Deliver a Masterpiece.<br>Capture with Ease.</h2>
+    <p class="masterpiece-sub">'Getting things done' Starts Here</p>
+    <div class="masterpiece-back-card">
+      <img src="assets/images/masterpiece-hero.jpg" alt="">
+      <div class="masterpiece-back-overlay">
+        <p class="masterpiece-back-title">Auto Mode</p>
+        <p class="masterpiece-back-sub">Let the Drone Do the Directing</p>
+        <div class="masterpiece-back-desc">
+          <p>Frame the subject, and Mini 4 Pro will automatically plan and execute the flight route. Even during the filming, it can intelligently switch between multiple perspectives and camera movements, helping you craft your aerial masterpiece.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="masterpiece-card">
+      <img src="assets/images/masterpiece-hero.jpg" alt="DriftCam pilot">
+      <div class="masterpiece-overlay">
+        <p class="masterpiece-overlay-title">Manual Mode</p>
+        <p class="masterpiece-overlay-sub">Your Flight, Your Vision</p>
+        <div class="masterpiece-overlay-desc">
+          <p>You can customize the flight route from multiple directions and use the Manual wheel to achieve cinematic camera movements like circling, pulling in, and pulling away.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============================
+     SECTION 12: AUTO MODE / MANUAL MODE
+=============================== -->
+<section class="mode-section">
+  <div class="mode-card mode-blur">
+    <h3 class="mode-card-title">Auto Mode</h3>
+    <p class="mode-card-sub">Let the Drone Do the Directing</p>
+    <div class="mode-card-desc">
+      <p>Frame the subject, and Mini 4 Pro will automatically plan and execute the flight route. Even during the filming, it can intelligently switch between multiple perspectives and camera movements, helping you craft your aerial masterpiece.</p>
+    </div>
+  </div>
+  <div class="mode-card mode-main">
+    <h3 class="mode-card-title">Manual Mode</h3>
+    <p class="mode-card-sub">Your Flight, Your Vision</p>
+    <div class="mode-card-desc">
+      <p>You can customize the flight route from multiple directions and use the Manual wheel to achieve cinematic camera movements like circling, pulling in, and pulling away.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     SECTION 13: PACKED WITH POWERFUL
+=============================== -->
+<section class="capabilities-section">
+  <h2 class="capabilities-title">Packed with Powerful<br>Full-Fledged Capabilities</h2>
+  <div class="capabilities-layout">
+    <div class="capabilities-menu">
+      <div class="cap-item cap-active">Vision Assist</div>
+      <div class="cap-divider"></div>
+      <div class="cap-item">Waypoint Flight</div>
+      <div class="cap-divider"></div>
+      <div class="cap-item">Cruise Control</div>
+      <div class="cap-divider"></div>
+      <div class="cap-item">Advanced RTH</div>
+      <div class="cap-divider"></div>
+      <div class="cap-item">Immersive Flight Experience</div>
+      <div class="cap-divider"></div>
+    </div>
+    <div class="capabilities-desc">
+      <p>Experience visual assistance from the front, back, left, and right. Simply tap the screen to switch the Vision Assist view and see obstacles from various directions on the flight. This heightened awareness makes every flight feel fully secure.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     SECTION 14: FULL-POWER MINI
+=============================== -->
+<section class="versatility-section">
+  <h2 class="versatility-title">Full-Power Mini with<br>Unmatched Versatility</h2>
+  <div class="versatility-layout">
+    <div class="versatility-desc">
+      <p>Delivers dynamic camera movement templates tailored for portrait, close-up, and long-range shots, ensuring you nail every shot!</p>
+    </div>
+    <div class="versatility-menu">
+      <div class="vers-item">
+        <span>MasterShots</span>
+        <div class="vers-divider"></div>
+      </div>
+      <div class="vers-item">
+        <span>QuickShots</span>
+        <div class="vers-divider"></div>
+      </div>
+      <div class="vers-item">
+        <span>Hyperlapse</span>
+        <div class="vers-divider"></div>
+      </div>
+      <div class="vers-item">
+        <span>Panorama</span>
+        <div class="vers-divider"></div>
+      </div>
+      <div class="vers-item">
+        <span>QuickTransfer</span>
+        <div class="vers-divider"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     SECTION 15: GET THE MOST OUT OF YOUR MINI
+=============================== -->
+<section class="accessories-section">
+  <h2 class="accessories-title">Get the Most Out<br>of Your Mini</h2>
+  <div class="accessories-featured">
+    <button class="raw-btn acc-prev" id="accPrev">
+      <img src="https://www.figma.com/api/mcp/asset/6829e4f4-88f2-4182-bb0f-6b545852ebac" alt="prev">
+    </button>
+    <div class="accessories-center">
+      <img src="https://www.figma.com/api/mcp/asset/8451c4e9-4b0c-4dff-b912-f7d9d19ebc7e" alt="ND Filters">
+    </div>
+    <button class="raw-btn acc-next" id="accNext">
+      <img src="https://www.figma.com/api/mcp/asset/6829e4f4-88f2-4182-bb0f-6b545852ebac" alt="next">
+    </button>
+  </div>
+  <div class="accessories-name">
+    <span class="acc-title-text">DJI Mini 4 Pro ND Filters Set (ND16/64/256)</span>
+    <sup>[7]</sup>
+  </div>
+  <p class="accessories-sub">Adapt to strong lighting conditions with ND16/64/256 filters and always be ready for the perfect shot.</p>
+  <div class="accessories-grid" id="accGrid">
+    <div class="acc-card acc-faded">
+      <img src="https://www.figma.com/api/mcp/asset/373f3c75-2ddb-4edb-bb23-f3d1d0048660" alt="Acc 1">
+    </div>
+    <div class="acc-card acc-faded">
+      <img src="https://www.figma.com/api/mcp/asset/fe55a832-1ec9-40ce-82a3-0a341fc42c21" alt="Acc 2">
+    </div>
+    <div class="acc-card acc-active">
+      <img src="https://www.figma.com/api/mcp/asset/6ea8539f-5532-4c90-9fb3-4ba6016b337b" alt="Acc 3">
+    </div>
+    <div class="acc-card acc-faded">
+      <img src="https://www.figma.com/api/mcp/asset/bb286d91-360e-406b-af08-fe5ce283b438" alt="Acc 4">
+    </div>
+    <div class="acc-card acc-faded">
+      <img src="https://www.figma.com/api/mcp/asset/25404eb8-2e9e-4ba2-8e38-715c01ab5a39" alt="Acc 5">
+    </div>
+    <div class="acc-card acc-faded">
+      <img src="https://www.figma.com/api/mcp/asset/9cad561c-6859-4188-8ead-26d40a569eb0" alt="Acc 6">
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     SECTION 16: DJI MINI 4 PRO SPECS
+=============================== -->
+<section class="product-section">
+  <div class="product-bg-text">dji mini 4 pro</div>
+  <div class="product-layout">
+    <div class="product-image">
+      <img src="https://www.figma.com/api/mcp/asset/db60a23f-454b-41ea-8773-285151cfc82e" alt="DJI Mini 4 Pro">
+    </div>
+    <div class="product-info">
+      <p class="product-tagline">Shoot Stunning 4K, Avoid Obstacles,<br>Fly Longer — All Under 249g.</p>
+      <div class="product-price">
+        <span>From USD</span>
+        <span class="price-blue">$759</span>
+      </div>
+      <button class="buy-btn">
+        <img src="https://www.figma.com/api/mcp/asset/e5d32151-4148-452e-8659-694059d5da74" alt="store">
+        <span>Buy Now</span>
+      </button>
+    </div>
+  </div>
+  <div class="specs-grid">
+    <div class="spec-item">
+      <img src="https://www.figma.com/api/mcp/asset/1e07e8fe-6d29-4287-8451-5d0d5589da75" alt="Weight">
+      <p>Under 249 g</p>
+    </div>
+    <div class="spec-item">
+      <img src="https://www.figma.com/api/mcp/asset/39e712ab-54da-4840-9957-f20ad0b345c7" alt="Camera">
+      <p>1/1.3-inch CMOS Wide-Angle Camera<br>True Vertical Shooting</p>
+    </div>
+    <div class="spec-item">
+      <img src="https://www.figma.com/api/mcp/asset/39e712ab-54da-4840-9957-f20ad0b345c7" alt="Video">
+      <p>4K/60fps HDR<br>Slow Motion: 4K/100fps<br>Night Shots Video</p>
+    </div>
+    <div class="spec-item">
+      <img src="https://www.figma.com/api/mcp/asset/727d6334-6aeb-41aa-a70e-e3a51afad146" alt="Log">
+      <p>10-bit D-Log M, HLG</p>
+    </div>
+    <div class="spec-item">
+      <img src="https://www.figma.com/api/mcp/asset/2b2d8589-2ca9-4174-b0a0-eb5a170f3a36" alt="Obstacle">
+      <p>Omnidirectional Obstacle Sensing, APAS 5.0<br>Advanced RTH, Waypoint Flight, Cruise Control</p>
+    </div>
+    <div class="spec-item">
+      <img src="https://www.figma.com/api/mcp/asset/354f4548-8032-4513-be5d-a705e78009f2" alt="Transmission">
+      <p>DJI O4: Up to 20 km<br>1080p/60fps Live Feed</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     FOOTER
+=============================== -->
+<footer class="footer">
+  <div class="footer-top">
+    <img src="https://www.figma.com/api/mcp/asset/ddaa43b2-3b23-44e1-9bd0-2371ef981084" alt="DriftCam Footer Logo" class="footer-logo">
+    <div class="footer-nav-links">
+      <span>About Us</span>
+      <span>Contact Us</span>
+      <span>Careers</span>
+      <span>Dealer Portal</span>
+      <span>RoboMaster</span>
+    </div>
+  </div>
+  <div class="footer-divider"></div>
+  <div class="footer-columns">
+    <div class="footer-col">
+      <h4>Product Categories</h4>
+      <ul>
+        <li>Consumer</li>
+        <li>Professional</li>
+        <li>Enterprise</li>
+        <li>Components</li>
+      </ul>
+      <h4 style="margin-top:40px;">Service Plans</h4>
+      <ul>
+        <li>DJI Care Refresh</li>
+        <li>DJI Care Pro</li>
+        <li>DJI Care Enterprise</li>
+        <li>DJI Maintenance Program</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Where to Buy</h4>
+      <ul>
+        <li>DJI Online Store</li>
+        <li>Flagship Stores</li>
+        <li>DJI-Operated Stores</li>
+        <li>Retail Stores</li>
+        <li>Enterprise Retailers</li>
+        <li>Agricultural Drone Dealer</li>
+        <li>Delivery Drone Dealer</li>
+        <li>Pro Retailers</li>
+        <li>DJI Store App</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <ul>
+        <li>DJI Online Store</li>
+        <li>Flagship Stores</li>
+        <li>DJI-Operated Stores</li>
+        <li>Retail Stores</li>
+        <li>Enterprise Retailers</li>
+        <li>Agricultural Drone Dealer</li>
+        <li>Delivery Drone Dealer</li>
+        <li>Pro Retailers</li>
+        <li>DJI Store App</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Service Plans</h4>
+      <ul>
+        <li>DJI Care Refresh</li>
+        <li>DJI Care Pro</li>
+        <li>DJI Care Enterprise</li>
+        <li>DJI Maintenance Program</li>
+      </ul>
+    </div>
+    <div class="footer-col footer-subscribe">
+      <h4>Subscribe</h4>
+      <p>Join Our Flight – Get Exclusive DJI Updates</p>
+      <div class="subscribe-wrap">
+        <div class="subscribe-input">
+          <span>email.com</span>
+          <button class="submit-btn">Submit</button>
+        </div>
+      </div>
+      <div class="subscribe-agree">
+        <div class="checkbox"></div>
+        <p>I agree to receive promotional emails, text messages, and updates from DJI.</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-divider"></div>
+  <div class="footer-bottom">
+    <div class="footer-legal">
+      <span>Privacy Policy</span>
+      <span class="dot"></span>
+      <span>Cookie Use</span>
+      <span class="dot"></span>
+      <span>Terms of Use</span>
+      <span class="copyright">Copyright © 2025 DJI. All Rights Reserved</span>
+    </div>
+    <div class="footer-social">
+      <img src="https://www.figma.com/api/mcp/asset/319537e1-2ef8-46f3-8849-37587e2682e5" alt="YouTube">
+      <img src="https://www.figma.com/api/mcp/asset/3e039b14-57dd-411c-a62b-3f458ba9fb64" alt="Instagram">
+      <img src="https://www.figma.com/api/mcp/asset/9bf9c29c-b1ee-4d51-8b94-414cd5fcd3ff" alt="Email">
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
