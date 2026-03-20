@@ -162,9 +162,11 @@
       top: 793px;
       width: 661px;
       height: 95px;
-      background: radial-gradient(ellipse, rgba(180,180,200,0.5) 0%, transparent 70%);
+      background: radial-gradient(ellipse, rgba(0,0,0,0.2) 0%, transparent 70%);
       filter: blur(30px);
       pointer-events: none;
+      opacity: 0;
+      transition: opacity 1200ms ease;
     }
 
     .desc-anno-left {
@@ -246,6 +248,679 @@
       letter-spacing: -0.4px;
       color: #4a4a4a;
       margin-top: 8px;
+    }
+
+    /* ── SECTION 3: High-Def Imaging ── */
+    .imaging-section {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      background: #f1f1f5;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .imaging-card {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 1879px;
+      height: 1040px;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .imaging-card video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .imaging-title-1 {
+      position: absolute;
+      left: 91px;
+      top: 110px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 240px;
+      line-height: 240px;
+      color: #fff;
+      text-transform: uppercase;
+      white-space: nowrap;
+      z-index: 1;
+    }
+
+    .imaging-title-2 {
+      position: absolute;
+      left: 91px;
+      top: 290px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 240px;
+      line-height: 240px;
+      color: #fff;
+      text-transform: uppercase;
+      white-space: nowrap;
+      z-index: 1;
+    }
+
+    .imaging-desc {
+      position: absolute;
+      left: 1318px;
+      top: 810px;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 32px;
+      letter-spacing: -0.6px;
+      color: #fff;
+      text-transform: uppercase;
+      white-space: nowrap;
+      z-index: 1;
+    }
+
+    /* ── SECTION 4: 4K/60fps HDR ── */
+    .hdr-section {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      background: #f1f1f5;
+      margin: 0 auto;
+    }
+
+    /* 왼쪽 패널 */
+    .hdr-left {
+      position: absolute;
+      left: 20px;
+      top: 120px;
+      width: 930px;
+      height: 902px;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .hdr-left-track {
+      display: flex;
+      width: calc(930px * 5);
+      height: 100%;
+      transition: transform 0.6s ease;
+    }
+
+    .hdr-left-track img {
+      width: 930px;
+      height: 902px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    /* 오른쪽 패널 */
+    .hdr-right {
+      position: absolute;
+      left: 970px;
+      top: 120px;
+      width: 930px;
+      height: 520px;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .hdr-right-track {
+      display: flex;
+      width: calc(930px * 5);
+      height: 100%;
+      transition: transform 0.6s ease;
+    }
+
+    .hdr-right-track video {
+      width: 930px;
+      height: 520px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    /* 텍스트 */
+    .hdr-label {
+      position: absolute;
+      left: 978px;
+      top: 680px;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: -0.4px;
+      color: #000;
+    }
+
+    .hdr-title {
+      position: absolute;
+      left: 974px;
+      top: 708px;
+      font-size: 80px;
+      font-weight: 500;
+      line-height: 100px;
+      letter-spacing: -2px;
+      color: #111;
+      white-space: nowrap;
+    }
+
+    .hdr-icon {
+      position: absolute;
+      left: 1517px;
+      top: 728px;
+      width: 60px;
+      height: 60px;
+    }
+
+    .hdr-desc {
+      position: absolute;
+      left: 974px;
+      top: 828px;
+      width: 512px;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 32px;
+      letter-spacing: -0.6px;
+      color: #4a4a4a;
+      text-transform: uppercase;
+    }
+
+    /* ── SECTION 5: RAW-SOME PHOTOS ── */
+    .raw-section {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      background: #f1f1f5;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .raw-title {
+      position: absolute;
+      left: calc(50% - 520px);
+      top: 160px;
+      width: 1041px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 180px;
+      line-height: 180px;
+      color: #111;
+      text-transform: uppercase;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .raw-carousel-outer {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 324px;
+      width: 1920px;
+      height: 614px;
+      overflow: hidden;
+    }
+
+    .raw-carousel-inner {
+      position: absolute;
+      left: 338px;
+      top: 0;
+      height: 614px;
+    }
+
+    .raw-track {
+      display: flex;
+      align-items: center;
+      gap: 100px;
+      height: 614px;
+      transition: transform 0.6s ease;
+    }
+
+    .raw-slide {
+      flex-shrink: 0;
+      border-radius: 20px;
+      overflow: hidden;
+      width: 1080px;
+      height: 474px;
+      transition: width 0.6s ease, height 0.6s ease;
+    }
+
+    .raw-slide.active {
+      width: 1245px;
+      height: 614px;
+    }
+
+    .raw-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .raw-nav {
+      position: absolute;
+      top: calc(324px + 282px);
+      left: 313px;
+      width: 1295px;
+      height: 50px;
+      pointer-events: none;
+    }
+
+    .raw-btn {
+      position: absolute;
+      top: 0;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: all;
+      padding: 6.25px;
+      z-index: 5;
+    }
+
+    .raw-btn img {
+      width: 37.5px;
+      height: 37.5px;
+    }
+
+    .raw-btn-prev {
+      left: 0;
+      transform: rotate(180deg);
+    }
+
+    .raw-btn-next {
+      right: 0;
+    }
+
+    /* ── SECTION 6: FEATURES LIST ── */
+    .feat-section {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      background: #f1f1f5;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .feat-list {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 1246px;
+    }
+
+    .feat-row {
+      position: relative;
+      height: 122px;
+      overflow: hidden;
+      transition: height 0.4s ease;
+      cursor: pointer;
+    }
+
+    .feat-row + .feat-row::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #111;
+      transition: opacity 0.3s ease;
+    }
+
+    /* 헤더: 행별 들여쓰기 위치 */
+    .feat-header {
+      position: absolute;
+      top: 12px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .feat-row-1 .feat-header { left: 227px; }
+    .feat-row-2 .feat-header { left: 337.5px; }
+    .feat-row-3 .feat-header { left: 403.5px; }
+
+    .feat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 24px;
+      line-height: 32px;
+      color: #4a4a4a;
+      flex-shrink: 0;
+    }
+
+    .feat-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 100px;
+      line-height: 100px;
+      color: #111;
+      transition: opacity 0.3s ease;
+    }
+
+    /* 비활성 행 타이틀 흐리기 */
+    .feat-list.has-hover .feat-row:not(.expanded) .feat-title,
+    .feat-list.has-hover .feat-row:not(.expanded) .feat-num,
+    .feat-list.has-hover .feat-row:not(.expanded)::before {
+      opacity: 0.4;
+    }
+
+    /* 확장 콘텐츠: 항상 가운데 정렬 */
+    .feat-body {
+      position: absolute;
+      top: 132px; /* 12(top) + 100(title) + 20(gap) */
+      left: 50%;
+      transform: translateX(-50%);
+      width: 793px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding-bottom: 32px;
+      opacity: 0;
+      transition: opacity 0.25s ease 0.1s;
+    }
+
+    .feat-desc {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      letter-spacing: -0.4px;
+      color: #000;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .feat-video {
+      width: 600px;
+      height: 336px;
+      border-radius: 12px;
+      object-fit: cover;
+      flex-shrink: 0;
+      display: block;
+    }
+
+    .feat-row.expanded {
+      height: 568px; /* 12 + 100 + 20 + 48(desc) + 20 + 336(video) + 32(bottom) */
+    }
+
+    .feat-row.expanded .feat-body {
+      opacity: 1;
+    }
+
+    /* ── SECTION 7: 더 좋아진 비행 ── */
+    .flight-section {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .flight-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      pointer-events: none;
+    }
+
+    .flight-text {
+      position: absolute;
+      left: 960.5px;
+      transform: translateX(-50%);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 240px;
+      line-height: 240px;
+      color: #fff;
+      text-transform: uppercase;
+      white-space: nowrap;
+      text-align: center;
+      mix-blend-mode: exclusion;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .flight-text-1 { top: 330px; }
+    .flight-text-2 { top: 510px; }
+
+    /* ── SECTION 8: 기능 설명 전 ── */
+    .sense-wrapper {
+      width: 1920px;
+      height: 2160px; /* 1080 진입 + 1080 비디오 확장 */
+      margin: 0 auto;
+    }
+
+    .sense-section {
+      position: sticky;
+      top: 0;
+      width: 1920px;
+      height: 1080px;
+      background: #f1f1f5;
+      overflow: hidden;
+    }
+
+    .sense-title-1 {
+      position: absolute;
+      left: 688.5px;
+      top: 200px;
+      transform: translateX(calc(-50% - 1920px));
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 180px;
+      line-height: 180px;
+      color: #111;
+      text-transform: uppercase;
+      white-space: nowrap;
+      text-align: center;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .sense-title-2 {
+      position: absolute;
+      left: 1250px;
+      top: 720px;
+      transform: translateX(calc(-50% + 1920px));
+      width: 1340px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 180px;
+      line-height: 180px;
+      color: #111;
+      text-transform: uppercase;
+      text-align: center;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .sense-video {
+      position: absolute;
+      left: 653px;
+      top: 380px;
+      width: 614px;
+      height: 320px;
+      border-radius: 10px;
+      object-fit: cover;
+      z-index: 2;
+    }
+
+    .sense-desc {
+      position: absolute;
+      left: calc(50% + 0.5px);
+      top: 907px;
+      transform: translateX(-50%);
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 32px;
+      letter-spacing: -0.6px;
+      color: #4a4a4a;
+      text-align: center;
+      text-transform: uppercase;
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 800ms ease;
+    }
+
+    /* ── SECTION 9: 배터리 ── */
+    .battery-section {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      background: #f1f1f5;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .battery-num {
+      position: absolute;
+      left: 341px;
+      top: 296px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 24px;
+      line-height: 32px;
+      color: #111;
+      white-space: nowrap;
+    }
+
+    .battery-title {
+      position: absolute;
+      left: 337px;
+      top: 338px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 80px;
+      line-height: 80px;
+      color: #111;
+      white-space: nowrap;
+    }
+
+    .battery-body {
+      position: absolute;
+      left: 341px;
+      top: 518px;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 32px;
+      letter-spacing: -0.6px;
+      color: #000;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .battery-min-1 {
+      position: absolute;
+      left: 337px;
+      top: 676px;
+      font-size: 40px;
+      font-weight: 500;
+      line-height: 60px;
+      letter-spacing: -1px;
+      color: #31a2f3;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .battery-min-2 {
+      position: absolute;
+      left: 557px;
+      top: 676px;
+      font-size: 40px;
+      font-weight: 500;
+      line-height: 60px;
+      letter-spacing: -1px;
+      color: #31a2f3;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .battery-label-1 {
+      position: absolute;
+      left: 337px;
+      top: 736px;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: -0.4px;
+      color: #666;
+      white-space: nowrap;
+    }
+
+    .battery-label-2 {
+      position: absolute;
+      left: 557px;
+      top: 736px;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: -0.4px;
+      color: #666;
+      white-space: nowrap;
+    }
+
+    /* 배터리 이미지 컴포넌트 */
+    .battery-img-wrap {
+      position: absolute;
+      left: 840px;
+      top: 120px;
+      width: 840px;
+      height: 840px;
+    }
+
+    .battery-shadow {
+      position: absolute;
+      left: 98px;
+      top: 655px;
+      width: 655px;
+      height: 103px;
+      overflow: visible;
+      animation: shadowPulse 2400ms ease-in-out infinite;
+    }
+
+    @keyframes batteryFloat {
+      0%   { transform: translate(-50%, -50%) translateY(0); }
+      50%  { transform: translate(-50%, -50%) translateY(-20px); }
+      100% { transform: translate(-50%, -50%) translateY(0); }
+    }
+
+    @keyframes shadowPulse {
+      0%   { opacity: 0.12; }
+      50%  { opacity: 0.06; }
+      100% { opacity: 0.12; }
+    }
+
+    .battery-shadow-inner {
+      position: absolute;
+      top: -58.25%;
+      right: -7.63%;
+      bottom: -48.54%;
+      left: -9.16%;
+    }
+
+    .battery-shadow-inner img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      max-width: none;
+    }
+
+    .battery-img {
+      position: absolute;
+      left: 50%;
+      top: calc(50% + 20px);
+      width: 840px;
+      height: 840px;
+      overflow: hidden;
+      animation: batteryFloat 2400ms ease-in-out infinite;
+    }
+
+    .battery-img img {
+      position: absolute;
+      top: 4.89%;
+      left: -2.43%;
+      width: 118.47%;
+      height: 90.41%;
+      object-fit: contain;
     }
 
     /* ── SCROLL INDICATOR (fixed) ── */
@@ -387,6 +1062,201 @@
 
 </section>
 
+<!-- ── SECTION 3: High-Def Imaging ── -->
+<section class="imaging-section">
+  <div class="imaging-card">
+    <video autoplay muted loop playsinline>
+      <source src="assets/videos/highdef-imaging.webm" type="video/webm">
+    </video>
+  </div>
+  <p class="imaging-title-1">High-Def</p>
+  <p class="imaging-title-2">Imaging</p>
+  <div class="imaging-desc">
+    <p>Capture more complex details with</p>
+    <p>Mini 4 Pro's 1/1.3" CMOS sensor,</p>
+    <p>Dual Native ISO Fusion, and f/1.7 aperture,</p>
+    <p>delivering high dynamic range for</p>
+    <p>stunning results.</p>
+  </div>
+</section>
+
+<!-- ── SECTION 4: 4K/60fps HDR ── -->
+<section class="hdr-section">
+
+  <!-- 왼쪽 이미지 캐러셀 -->
+  <div class="hdr-left">
+    <div class="hdr-left-track" id="hdrLeftTrack">
+      <img src="assets/images/feature-1.jpg" alt="">
+      <img src="assets/images/feature-2.jpg" alt="">
+      <img src="assets/images/feature-3.jpg" alt="">
+      <img src="assets/images/feature-4.jpg" alt="">
+      <img src="assets/images/feature-5.jpg" alt="">
+    </div>
+  </div>
+
+  <!-- 오른쪽 영상 캐러셀 -->
+  <div class="hdr-right">
+    <div class="hdr-right-track" id="hdrRightTrack">
+      <video autoplay muted loop playsinline><source src="assets/videos/feature-1.webm" type="video/webm"></video>
+      <video autoplay muted loop playsinline><source src="assets/videos/feature-2.webm" type="video/webm"></video>
+      <video autoplay muted loop playsinline><source src="assets/videos/feature-3.webm" type="video/webm"></video>
+      <video autoplay muted loop playsinline><source src="assets/videos/feature-4.webm" type="video/webm"></video>
+      <video autoplay muted loop playsinline><source src="assets/videos/feature-5.webm" type="video/webm"></video>
+    </div>
+  </div>
+
+  <!-- 텍스트 -->
+  <p class="hdr-label">MAX VISUAL POWER 01</p>
+  <p class="hdr-title">4K/60fps HDR</p>
+  <img class="hdr-icon" src="iCON/Mode night.svg" alt="mode night">
+  <div class="hdr-desc">
+    <p>Capture more complex details with</p>
+    <p>Mini 4 Pro's 1/1.3" CMOS sensor,</p>
+    <p>Dual Native ISO Fusion, and f/1.7 aperture,</p>
+    <p>delivering high dynamic range for</p>
+    <p>stunning results.</p>
+  </div>
+
+</section>
+
+<!-- ── SECTION 5: RAW-SOME PHOTOS ── -->
+<section class="raw-section">
+
+  <p class="raw-title">RAW-SOME PHOTOS</p>
+
+  <div class="raw-carousel-outer">
+    <div class="raw-carousel-inner">
+      <div class="raw-track" id="rawTrack">
+        <div class="raw-slide active"><img src="assets/images/raw-1.jpg" alt="RAW Photo 1"></div>
+        <div class="raw-slide"><img src="assets/images/raw-2.jpg" alt="RAW Photo 2"></div>
+        <div class="raw-slide"><img src="assets/images/raw-3.jpg" alt="RAW Photo 3"></div>
+        <div class="raw-slide"><img src="assets/images/raw-4.jpg" alt="RAW Photo 4"></div>
+        <div class="raw-slide"><img src="assets/images/raw-5.jpg" alt="RAW Photo 5"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 좌우 버튼 -->
+  <div class="raw-nav">
+    <button class="raw-btn raw-btn-prev" id="rawPrev">
+      <img src="assets/images/icon-chevron-right.svg" alt="이전">
+    </button>
+    <button class="raw-btn raw-btn-next" id="rawNext">
+      <img src="assets/images/icon-chevron-right.svg" alt="다음">
+    </button>
+  </div>
+
+</section>
+
+<!-- ── SECTION 6: FEATURES LIST ── -->
+<section class="feat-section">
+  <div class="feat-list" id="featList">
+
+    <!-- Row 1: True Vertical Shooting -->
+    <div class="feat-row feat-row-1">
+      <div class="feat-header">
+        <span class="feat-num">01</span>
+        <span class="feat-title">True Vertical Shooting</span>
+      </div>
+      <div class="feat-body">
+        <p class="feat-desc">Capture in vertical mode optimized for social media and mobile viewing,<br>perfect for sharing on the go.</p>
+        <video class="feat-video" autoplay muted loop playsinline><source src="assets/videos/feat-vertical.webm" type="video/webm"></video>
+      </div>
+    </div>
+
+    <!-- Row 2: Large-Angle Tilt -->
+    <div class="feat-row feat-row-2">
+      <div class="feat-header">
+        <span class="feat-num">02</span>
+        <span class="feat-title">Large-Angle Tilt</span>
+      </div>
+      <div class="feat-body">
+        <p class="feat-desc">Achieve ultra-smooth camera motion with a 60° max tilt angle,<br>unlocking greater cinematic potential.</p>
+        <video class="feat-video" autoplay muted loop playsinline><source src="assets/videos/feat-tilt.webm" type="video/webm"></video>
+      </div>
+    </div>
+
+    <!-- Row 3: Digital Zoom -->
+    <div class="feat-row feat-row-3">
+      <div class="feat-header">
+        <span class="feat-num">03</span>
+        <span class="feat-title">Digital Zoom</span>
+      </div>
+      <div class="feat-body">
+        <p class="feat-desc">Capture distant subjects with ease using up to 3x zoom<br>for photos and 4x zoom for video.</p>
+        <video class="feat-video" autoplay muted loop playsinline><source src="assets/videos/feat-zoom.webm" type="video/webm"></video>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── SECTION 7: 더 좋아진 비행 ── -->
+<section class="flight-section">
+  <img class="flight-bg" src="assets/images/flight-bg.jpg" alt="더 좋아진 비행">
+  <p class="flight-text flight-text-1">Intuvecta</p>
+  <p class="flight-text flight-text-2">Enhansera</p>
+</section>
+
+<!-- ── SECTION 8: 기능 설명 전 ── -->
+<div class="sense-wrapper">
+  <section class="sense-section">
+    <p class="sense-title-1">Glide smooth and true!</p>
+    <video class="sense-video" id="senseVideo" autoplay muted loop playsinline>
+      <source src="assets/videos/flight-stable.webm" type="video/webm">
+    </video>
+    <p class="sense-title-2">Track motion sharply!</p>
+    <div class="sense-desc">
+      <p>Omnidirectional obstacle sensing makes the Mini 4 Pro safer, using four wide-angle and two downward</p>
+      <p>vision sensors to detect obstacles from all angles. APAS adds safety with automatic braking and bypassing.</p>
+    </div>
+  </section>
+</div>
+
+<!-- ── SECTION 9: 배터리 ── -->
+<section class="battery-section">
+
+  <p class="battery-num">01</p>
+
+  <div class="battery-title">
+    <p>Fly Even Longer,</p>
+    <p>Create More</p>
+  </div>
+
+  <div class="battery-body">
+    <p>Focus on creation, not battery life,</p>
+    <p>with Mini 4 Pro's Intelligent Flight</p>
+    <p>Battery — up to 34 mins of flight,</p>
+    <p>or 45 mins with the Plus version.</p>
+  </div>
+
+  <p class="battery-min-1">34Min</p>
+  <p class="battery-min-2">45Min</p>
+
+  <div class="battery-label-1">
+    <p>Intelligent</p>
+    <p>Flight Battery</p>
+  </div>
+
+  <div class="battery-label-2">
+    <p>Intelligent Flight</p>
+    <p>Battery Plus</p>
+  </div>
+
+  <!-- 배터리 이미지 -->
+  <div class="battery-img-wrap">
+    <div class="battery-shadow">
+      <div class="battery-shadow-inner">
+        <img src="assets/images/battery-shadow.png" alt="">
+      </div>
+    </div>
+    <div class="battery-img">
+      <img src="assets/images/battery.png" alt="배터리">
+    </div>
+  </div>
+
+</section>
+
 <!-- ── 드론 (fixed, 섹션1→섹션2 스크롤 애니메이션) ── -->
 <div class="main-drone" id="mainDrone">
   <img src="assets/images/drone-hero.png" alt="DriftCam Drone">
@@ -414,7 +1284,7 @@
   const S1_TOP = 0, S1_LEFT = 340;
   const S2_TOP = 970, S2_LEFT = 352;
   const SECTION1_H = 1080;
-  const sec2Els = document.querySelectorAll('.desc-left, .desc-right, .desc-anno-left, .desc-anno-right');
+  const sec2Els = document.querySelectorAll('.desc-left, .desc-right, .desc-anno-left, .desc-anno-right, .desc-ellipse');
   let sec2Revealed = false;
 
   function getOffset() {
@@ -428,7 +1298,7 @@
     const offset = getOffset();
 
     const t = Math.min(1, scrollY / animEnd);
-    const top = (S2_TOP - animEnd) * t;
+    const top = t < 1 ? (S2_TOP - animEnd) * t : S2_TOP - scrollY;
     const left = offset + S2_LEFT;
 
     mainDrone.style.top  = top + 'px';
@@ -441,6 +1311,7 @@
       sec2Revealed = false;
       sec2Els.forEach(el => el.style.opacity = '0');
     }
+
   }
 
   window.addEventListener('resize', updateDrone);
@@ -460,6 +1331,125 @@
   });
 
   updateDrone();
+
+  // ── SECTION 4 캐러셀 (무한루프) ──
+  const leftTrack  = document.getElementById('hdrLeftTrack');
+  const rightTrack = document.getElementById('hdrRightTrack');
+  const HDR_COUNT = 5;
+  const SLIDE_W = 930;
+  const TRANSITION = '0.6s ease';
+
+  // 슬라이드 복제 (1~5 뒤에 1~5 붙이기)
+  [...leftTrack.children].forEach(el => leftTrack.appendChild(el.cloneNode(true)));
+  [...rightTrack.children].forEach(el => rightTrack.appendChild(el.cloneNode(true)));
+  leftTrack.style.width  = `${SLIDE_W * HDR_COUNT * 2}px`;
+  rightTrack.style.width = `${SLIDE_W * HDR_COUNT * 2}px`;
+
+  let hdrIndex = 0;
+
+  function advanceHdr() {
+    hdrIndex++;
+    leftTrack.style.transition  = TRANSITION;
+    rightTrack.style.transition = TRANSITION;
+    leftTrack.style.transform  = `translateX(-${hdrIndex * SLIDE_W}px)`;
+    rightTrack.style.transform = `translateX(-${hdrIndex * SLIDE_W}px)`;
+
+    // 복제 구간 끝나면 애니메이션 없이 원위치
+    if (hdrIndex === HDR_COUNT) {
+      setTimeout(() => {
+        leftTrack.style.transition  = 'none';
+        rightTrack.style.transition = 'none';
+        hdrIndex = 0;
+        leftTrack.style.transform  = 'translateX(0)';
+        rightTrack.style.transform = 'translateX(0)';
+      }, 600);
+    }
+  }
+
+  setInterval(advanceHdr, 4000);
+
+  // ── SECTION 5 RAW 캐러셀 ──
+  const rawTrack = document.getElementById('rawTrack');
+  const rawSlides = Array.from(rawTrack.querySelectorAll('.raw-slide'));
+  const RAW_COUNT = 5;
+  const RAW_STEP = 1180; // 1080px (inactive width) + 100px (gap)
+  let rawActive = 0;
+
+  function goToRaw(n) {
+    rawSlides[rawActive].classList.remove('active');
+    rawActive = (n + RAW_COUNT) % RAW_COUNT;
+    rawSlides[rawActive].classList.add('active');
+    rawTrack.style.transform = `translateX(-${rawActive * RAW_STEP}px)`;
+  }
+
+  document.getElementById('rawPrev').addEventListener('click', () => goToRaw(rawActive - 1));
+  document.getElementById('rawNext').addEventListener('click', () => goToRaw(rawActive + 1));
+
+  // ── SECTION 8 텍스트 슬라이드인 ──
+  const senseWrapper = document.querySelector('.sense-wrapper');
+  const senseSection = document.querySelector('.sense-section');
+  const senseTitle1  = document.querySelector('.sense-title-1');
+  const senseTitle2  = document.querySelector('.sense-title-2');
+  const senseDesc    = document.querySelector('.sense-desc');
+  const senseVideo   = document.getElementById('senseVideo');
+  let senseDescShown = false;
+
+  // 초기 비디오 크기/위치
+  const V_W0 = 614, V_H0 = 320, V_L0 = 653, V_T0 = 380;
+  const V_W1 = 1920, V_H1 = 1080, V_L1 = 0, V_T1 = 0;
+
+  function updateSenseAnim() {
+    const sectionRect = senseSection.getBoundingClientRect();
+    const wrapperRect = senseWrapper.getBoundingClientRect();
+    const vh = window.innerHeight;
+
+    // 텍스트 슬라이드인: 섹션 하단 진입(t=0) → 섹션 상단 = 뷰포트 상단(t=1)
+    const textT = Math.max(0, Math.min(1, (vh - sectionRect.top) / vh));
+    const offset = (1 - textT) * 1920;
+    senseTitle1.style.transform = `translateX(calc(-50% - ${offset}px))`;
+    senseTitle2.style.transform = `translateX(calc(-50% + ${offset}px))`;
+
+    if (textT >= 1 && !senseDescShown) {
+      senseDescShown = true;
+      senseDesc.style.opacity = '1';
+    } else if (textT < 1 && senseDescShown) {
+      senseDescShown = false;
+      senseDesc.style.opacity = '0';
+    }
+
+    // 비디오 확장: sticky 구간에서 wrapper top이 0→-1080 될 때
+    const videoT = Math.max(0, Math.min(1, -wrapperRect.top / 1080));
+    const w = V_W0 + (V_W1 - V_W0) * videoT;
+    const h = V_H0 + (V_H1 - V_H0) * videoT;
+    const l = V_L0 + (V_L1 - V_L0) * videoT;
+    const vt = V_T0 + (V_T1 - V_T0) * videoT;
+    const r = videoT >= 1 ? 0 : 10;
+    senseVideo.style.width        = w + 'px';
+    senseVideo.style.height       = h + 'px';
+    senseVideo.style.left         = l + 'px';
+    senseVideo.style.top          = vt + 'px';
+    senseVideo.style.borderRadius = r + 'px';
+  }
+
+  window.addEventListener('scroll', updateSenseAnim);
+  updateSenseAnim();
+
+  // ── SECTION 6 피처 아코디언 ──
+  const featList = document.getElementById('featList');
+  const featRows = Array.from(featList.querySelectorAll('.feat-row'));
+
+  featRows.forEach(row => {
+    row.addEventListener('mouseenter', () => {
+      featRows.forEach(r => r.classList.remove('expanded'));
+      row.classList.add('expanded');
+      featList.classList.add('has-hover');
+    });
+  });
+
+  featList.addEventListener('mouseleave', () => {
+    featRows.forEach(r => r.classList.remove('expanded'));
+    featList.classList.remove('has-hover');
+  });
 </script>
 
 </body>
