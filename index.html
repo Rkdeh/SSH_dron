@@ -690,7 +690,7 @@
     /* ── SECTION 8: 기능 설명 전 ── */
     .sense-wrapper {
       width: 1920px;
-      height: 2360px; /* 1080 진입 + 1080 비디오 확장 + 200 홀드 */
+      height: calc(200vh + 200px); /* 100vh 진입 + 100vh 비디오 확장 + 200 홀드 */
       margin: 0 auto;
     }
 
@@ -698,7 +698,7 @@
       position: sticky;
       top: 0;
       width: 1920px;
-      height: 1080px;
+      height: 100vh;
       background: #f1f1f5;
       overflow: hidden;
     }
@@ -1566,9 +1566,9 @@
   const senseVideo   = document.getElementById('senseVideo');
   let senseDescShown = false;
 
-  // 초기 비디오 크기/위치
+  // 초기 비디오 크기/위치 (최종 높이는 실제 뷰포트 기준)
   const V_W0 = 614, V_H0 = 320, V_L0 = 653, V_T0 = 380;
-  const V_W1 = 1920, V_H1 = 1080, V_L1 = 0, V_T1 = 0;
+  const V_W1 = 1920, V_L1 = 0, V_T1 = 0;
 
   function updateSenseAnim() {
     const sectionRect = senseSection.getBoundingClientRect();
@@ -1589,8 +1589,9 @@
       senseDesc.style.opacity = '0';
     }
 
-    // 비디오 확장: sticky 구간에서 wrapper top이 0→-1080 될 때
-    const videoT = Math.max(0, Math.min(1, -wrapperRect.top / 1080));
+    // 비디오 확장: sticky 구간에서 wrapper top이 0→-vh 될 때
+    const videoT = Math.max(0, Math.min(1, -wrapperRect.top / vh));
+    const V_H1 = vh;
     const w = V_W0 + (V_W1 - V_W0) * videoT;
     const h = V_H0 + (V_H1 - V_H0) * videoT;
     const l = V_L0 + (V_L1 - V_L0) * videoT;
