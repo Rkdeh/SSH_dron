@@ -933,6 +933,115 @@
       overflow: hidden;
     }
 
+    /* ── 섹션 11: Deliver a Masterpiece ── */
+    .master-wrapper {
+      width: 1920px;
+      height: calc(200vh + 1500px);
+      margin: 0 auto;
+    }
+    .master-section {
+      position: sticky;
+      top: 0;
+      width: 1920px;
+      height: 100vh;
+      background: #f1f1f5;
+      overflow: hidden;
+    }
+    .master-title {
+      position: absolute;
+      left: 960px;
+      top: 120px;
+      transform: translateX(-50%);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 240px;
+      line-height: 240px;
+      color: #111;
+      text-align: center;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .master-sub {
+      position: absolute;
+      left: 50%;
+      top: 580px;
+      transform: translateX(-50%);
+      font-family: 'Pretendard Variable', sans-serif;
+      font-size: 24px;
+      line-height: 80px;
+      color: #000;
+      letter-spacing: -0.6px;
+      white-space: nowrap;
+    }
+    .master-card {
+      position: absolute;
+      left: 50%;
+      bottom: 20px;
+      transform: translateX(-50%);
+      width: 532px;
+      height: 280px;
+      border-radius: 20px;
+      box-shadow: 0px 2px 4px rgba(0,0,0,0.12);
+      overflow: hidden;
+      background: #ccc;
+    }
+    #secondCard {
+      width: 1760px;
+      height: 924px;
+      transform: translateX(-50%) translateY(100vh);
+    }
+    .master-card video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .mc-title, .mc-sub, .mc-desc-box {
+      position: absolute;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      pointer-events: none;
+    }
+    .mc-title {
+      left: 60px;
+      top: 40px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 80px;
+      line-height: 80px;
+      color: #000;
+      white-space: nowrap;
+    }
+    .mc-sub {
+      left: 60px;
+      top: 120px;
+      font-family: 'Pretendard Variable', sans-serif;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 32px;
+      color: #000;
+      letter-spacing: -0.6px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .mc-desc-box {
+      bottom: 30px;
+      right: 30px;
+      width: 400px;
+      background: rgba(102,102,102,0.5);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px 40px;
+    }
+    .mc-desc-box p {
+      font-family: 'Pretendard Variable', sans-serif;
+      font-size: 16px;
+      line-height: 24px;
+      color: #fff;
+      letter-spacing: -0.4px;
+      width: 320px;
+    }
+
     .ctrl-num {
       position: absolute;
       left: 341px;
@@ -1059,6 +1168,214 @@
       0%   { opacity: 0.12; }
       50%  { opacity: 0.06; }
       100% { opacity: 0.12; }
+    }
+
+
+    /* ── 섹션 12: Packed with Powerful ── */
+    .cap-section {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      margin: 0 auto;
+      background: #f1f1f5;
+      overflow: hidden;
+    }
+    .cap-title {
+      position: absolute;
+      left: 160px;
+      top: 160px;
+      z-index: 1;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 100px;
+      line-height: 100px;
+      color: #111;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .cap-card {
+      position: absolute;
+      left: 500px;
+      top: 304px;
+      width: 1260px;
+      height: 660px;
+      border-radius: 20px;
+      box-shadow: 0px 2px 4px rgba(0,0,0,0.12);
+      overflow: hidden;
+      background: #ccc;
+    }
+    .cap-card img,
+    .cap-card video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .cap-menu {
+      position: absolute;
+      left: 160px;
+      top: 368px;
+      width: 320px;
+      height: 299px;
+    }
+    .cap-menu-bg {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 55px;
+      background: #111;
+      border-radius: 20px;
+      transition: top 0.3s cubic-bezier(0.4,0,0.2,1);
+    }
+    .cap-menu-inner {
+      position: absolute;
+      left: 20px;
+      top: 8px;
+      width: 280px;
+      display: flex;
+      flex-direction: column;
+    }
+    .cap-item {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      align-items: center;
+      cursor: pointer;
+    }
+    .cap-item + .cap-item {
+      padding-top: 16px;
+    }
+    .cap-item-name {
+      font-family: 'Pretendard Variable', sans-serif;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 32px;
+      text-align: center;
+      width: 100%;
+      letter-spacing: -0.6px;
+      color: #fff;
+      mix-blend-mode: exclusion;
+    }
+    .cap-divider {
+      width: 100%;
+      height: 1px;
+      background: #e1e1e1;
+    }
+    .cap-desc {
+      position: absolute;
+      left: 180px;
+      top: 964px;
+      width: 300px;
+      font-family: 'Pretendard Variable', sans-serif;
+      font-size: 16px;
+      line-height: 24px;
+      color: #4a4a4a;
+      letter-spacing: -0.4px;
+      transform: translateY(-100%);
+    }
+
+
+    /* ── 섹션 13: Full-Power Mini ── */
+    .s13-section {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      margin: 0 auto;
+      background: #f1f1f5;
+      overflow: hidden;
+    }
+    .s13-card {
+      position: absolute;
+      left: 160px;
+      top: 304px;
+      width: 1260px;
+      height: 660px;
+      border-radius: 20px;
+      box-shadow: 0px 2px 4px rgba(0,0,0,0.12);
+      overflow: hidden;
+      background: #ccc;
+    }
+    .s13-card img,
+    .s13-card video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .s13-title {
+      position: absolute;
+      right: 159px;
+      top: 160px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 100px;
+      line-height: 100px;
+      color: #111;
+      text-align: right;
+      text-transform: uppercase;
+      white-space: nowrap;
+      z-index: 1;
+    }
+    .s13-menu {
+      position: absolute;
+      left: 1440px;
+      top: 376px;
+      width: 320px;
+      height: 299px;
+    }
+    .s13-menu-bg {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 56px;
+      background: #111;
+      border-radius: 20px;
+      transition: top 0.3s cubic-bezier(0.4,0,0.2,1);
+    }
+    .s13-menu-inner {
+      position: absolute;
+      left: 20px;
+      top: 8px;
+      width: 280px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .s13-item {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      align-items: center;
+      cursor: pointer;
+    }
+    .s13-item-name {
+      font-family: 'Pretendard Variable', sans-serif;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 32px;
+      text-align: center;
+      width: 100%;
+      letter-spacing: -0.6px;
+      color: #fff;
+      mix-blend-mode: exclusion;
+    }
+    .s13-divider {
+      width: 100%;
+      height: 1px;
+      background: #e1e1e1;
+    }
+    .s13-desc {
+      position: absolute;
+      left: 1440px;
+      bottom: 116px;
+      width: 300px;
+      font-family: 'Pretendard Variable', sans-serif;
+      font-size: 16px;
+      line-height: 24px;
+      color: #4a4a4a;
+      letter-spacing: -0.4px;
     }
 
     /* ── SCROLL INDICATOR (fixed) ── */
@@ -1429,6 +1746,109 @@
 
 </section>
 
+<!-- ── 섹션 11: Deliver a Masterpiece ── -->
+<div class="master-wrapper">
+  <section class="master-section">
+    <div class="master-title">
+      <p>Deliver a Masterpiece.</p>
+      <p>Capture with Ease.</p>
+    </div>
+    <p class="master-sub">'Getting things done' Starts Here</p>
+    <div class="master-card" id="masterCard">
+      <video src="assets/videos/cinematic-off.mp4" autoplay muted loop playsinline></video>
+      <p class="mc-title">Manual Mode</p>
+      <p class="mc-sub">Your Flight, Your Vision</p>
+      <div class="mc-desc-box">
+        <p>You can customize the flight route from multiple directions and use the Manual wheel to achieve cinematic camera movements like circling, pulling in, and pulling away.</p>
+      </div>
+    </div>
+    <div class="master-card" id="secondCard">
+      <video src="assets/videos/cinematic-auto.mp4" autoplay muted loop playsinline></video>
+      <p class="mc-title sc-title">Auto Mode</p>
+      <p class="mc-sub sc-sub">Let the Drone Do the Directing</p>
+      <div class="mc-desc-box sc-desc-box">
+        <p>Frame the subject, and Mini 4 Pro will automatically plan and execute the flight route. Even during the filming, it can intelligently switch between multiple perspectives and camera movements, helping you craft your aerial masterpiece.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ── 섹션 12: Packed with Powerful ── -->
+<section class="cap-section">
+  <div class="cap-title">
+    <p>Packed with Powerful</p>
+    <p>Full-Fledged Capabilities</p>
+  </div>
+  <div class="cap-card" id="capCard">
+    <video id="capVideo" src="assets/videos/cap-feat-1.webm" autoplay muted loop playsinline></video>
+  </div>
+  <div class="cap-menu" id="capMenu">
+    <div class="cap-menu-bg" id="capMenuBg"></div>
+    <div class="cap-menu-inner">
+      <div class="cap-item active" data-index="0">
+        <p class="cap-item-name">Vision Assist</p>
+        <div class="cap-divider"></div>
+      </div>
+      <div class="cap-item" data-index="1">
+        <p class="cap-item-name">Waypoint Flight</p>
+        <div class="cap-divider"></div>
+      </div>
+      <div class="cap-item" data-index="2">
+        <p class="cap-item-name">Cruise Control</p>
+        <div class="cap-divider"></div>
+      </div>
+      <div class="cap-item" data-index="3">
+        <p class="cap-item-name">Advanced RTH</p>
+        <div class="cap-divider"></div>
+      </div>
+      <div class="cap-item" data-index="4">
+        <p class="cap-item-name">Immersive Flight Experience</p>
+        <div class="cap-divider"></div>
+      </div>
+    </div>
+  </div>
+  <p class="cap-desc" id="capDesc">Experience visual assistance from the front, back, left, and right. Simply tap the screen to switch the Vision Assist view and see obstacles from various directions on the flight. This heightened awareness makes every flight feel fully secure.</p>
+</section>
+
+<!-- ── 섹션 13: Full-Power Mini ── -->
+<section class="s13-section">
+  <div class="s13-title">
+    <p>Full-Power Mini with</p>
+    <p>Unmatched Versatility</p>
+  </div>
+  <div class="s13-card" id="s13Card">
+    <video id="s13Video" src="assets/videos/s13-feat-1.webm" autoplay muted loop playsinline></video>
+    <img id="s13Img" src="" style="display:none;">
+  </div>
+  <div class="s13-menu" id="s13Menu">
+    <div class="s13-menu-bg" id="s13MenuBg"></div>
+    <div class="s13-menu-inner">
+      <div class="s13-item active" data-index="0">
+        <p class="s13-item-name">MasterShots</p>
+        <div class="s13-divider"></div>
+      </div>
+      <div class="s13-item" data-index="1">
+        <p class="s13-item-name">QuickShots</p>
+        <div class="s13-divider"></div>
+      </div>
+      <div class="s13-item" data-index="2">
+        <p class="s13-item-name">Hyperlapse</p>
+        <div class="s13-divider"></div>
+      </div>
+      <div class="s13-item" data-index="3">
+        <p class="s13-item-name">Panorama</p>
+        <div class="s13-divider"></div>
+      </div>
+      <div class="s13-item" data-index="4">
+        <p class="s13-item-name">QuickTransfer</p>
+        <div class="s13-divider"></div>
+      </div>
+    </div>
+  </div>
+  <p class="s13-desc" id="s13Desc">Delivers dynamic camera movement templates tailored for portrait, close-up, and long-range shots, ensuring you nail every shot!</p>
+</section>
+
+
 <!-- ── 드론 (fixed, 섹션1→섹션2 스크롤 애니메이션) ── -->
 <div class="main-drone" id="mainDrone">
   <img src="assets/images/drone-hero.png" alt="DriftCam Drone">
@@ -1606,6 +2026,179 @@
 
   window.addEventListener('scroll', updateSenseAnim);
   updateSenseAnim();
+
+  // ── 섹션 11 카드 확장 ──
+  const masterWrapper = document.querySelector('.master-wrapper');
+  const masterCard    = document.getElementById('masterCard');
+  const secondCard    = document.getElementById('secondCard');
+  const scTitle       = secondCard.querySelector('.sc-title');
+  const scSub         = secondCard.querySelector('.sc-sub');
+  const scDescBox     = secondCard.querySelector('.sc-desc-box');
+  const masterTitle   = document.querySelector('.master-title');
+  const masterSub     = document.querySelector('.master-sub');
+  const mcTitle       = masterCard.querySelector('.mc-title');
+  const mcSub         = masterCard.querySelector('.mc-sub');
+  const mcDescBox     = masterCard.querySelector('.mc-desc-box');
+  const MC_W0 = 532,  MC_H0 = 280;
+  const MC_W1 = 1760, MC_H1 = 924;
+
+  function updateMasterAnim() {
+    const wrapperRect = masterWrapper.getBoundingClientRect();
+    const vh = window.innerHeight;
+    const t  = Math.max(0, Math.min(1, -wrapperRect.top / vh));
+    const t2 = Math.max(0, Math.min(1, (-wrapperRect.top - vh) / 1000));
+    const tb = Math.max(0, (t2 - 0.5) / 0.5);
+
+    // masterCard: phase에 따라 항상 명시적으로 포지셔닝 설정
+    if (t2 === 0) {
+      // Phase 1: bottom 고정 + 확장
+      masterCard.style.bottom  = '20px';
+      masterCard.style.top     = 'auto';
+      masterCard.style.width   = (MC_W0 + (MC_W1 - MC_W0) * t) + 'px';
+      masterCard.style.height  = (MC_H0 + (MC_H1 - MC_H0) * t) + 'px';
+      masterCard.style.filter  = '';
+      masterCard.style.opacity = '1';
+    } else if (tb > 0) {
+      // Phase 2b: 상단 고정 + 축소 + blur
+      masterCard.style.top     = (vh - 20 - MC_H1) + 'px';
+      masterCard.style.bottom  = 'auto';
+      masterCard.style.width   = (MC_W1 - (MC_W1 - 1600) * tb) + 'px';
+      masterCard.style.height  = (MC_H1 - (MC_H1 - 840)  * tb) + 'px';
+      masterCard.style.filter  = `blur(${12 * tb}px)`;
+      masterCard.style.opacity = t2 >= 1 ? '0' : '1';
+    } else {
+      // Phase 2a: 최대 크기, 상단 고정
+      masterCard.style.top     = (vh - 20 - MC_H1) + 'px';
+      masterCard.style.bottom  = 'auto';
+      masterCard.style.width   = MC_W1 + 'px';
+      masterCard.style.height  = MC_H1 + 'px';
+      masterCard.style.filter  = '';
+      masterCard.style.opacity = '1';
+    }
+
+    masterTitle.style.opacity = 1 - t;
+    masterSub.style.opacity   = 1 - t;
+    const overlayOpacity = t >= 1 ? 1 : 0;
+    mcTitle.style.opacity   = overlayOpacity;
+    mcSub.style.opacity     = overlayOpacity;
+    mcDescBox.style.opacity = overlayOpacity;
+
+    // Phase 2: secondCard 슬라이드업
+    const slideY = (1 - t2) * vh;
+    secondCard.style.transform = `translateX(-50%) translateY(${slideY}px)`;
+    const scOverlay = t2 >= 1 ? 1 : 0;
+    scTitle.style.opacity   = scOverlay;
+    scSub.style.opacity     = scOverlay;
+    scDescBox.style.opacity = scOverlay;
+  }
+
+  window.addEventListener('scroll', updateMasterAnim);
+  updateMasterAnim();
+
+
+  // ── 섹션 12 캡 메뉴 ──
+  const capMenuEl = document.getElementById('capMenu');
+  const capMenuBg = document.getElementById('capMenuBg');
+  const capItems  = Array.from(capMenuEl.querySelectorAll('.cap-item'));
+  const capDesc   = document.getElementById('capDesc');
+  const capVideo  = document.getElementById('capVideo');
+  const capVideos = [
+    'assets/videos/cap-feat-1.webm',
+    'assets/videos/cap-feat-2.webm',
+    'assets/videos/cap-feat-3.webm',
+    'assets/videos/cap-feat-4.webm',
+    'assets/videos/cap-feat-5.webm'
+  ];
+  const capDescs  = [
+    'Experience visual assistance from the front, back, left, and right. Simply tap the screen to switch the Vision Assist view and see obstacles from various directions on the flight. This heightened awareness makes every flight feel fully secure.',
+    'Plan your flight path in advance with precise waypoints. The drone will follow your exact route autonomously, letting you focus on capturing the perfect shot every time.',
+    'Maintain a constant flight speed with cruise control, keeping your footage smooth and stable while you concentrate on framing your subject.',
+    'Advanced Return-to-Home ensures your drone safely navigates back to its launch point, even in complex environments with obstacles.',
+    'Immerse yourself in the flight with a first-person view experience, giving you real-time perspective as if you were soaring through the sky.'
+  ];
+
+  function moveBg(item) {
+    const menuRect = capMenuEl.getBoundingClientRect();
+    const itemRect = item.getBoundingClientRect();
+    const pt = parseFloat(getComputedStyle(item).paddingTop) || 0;
+    capMenuBg.style.top    = (itemRect.top - menuRect.top + pt - 8) + 'px';
+    capMenuBg.style.height = (itemRect.height - pt + 16) + 'px';
+  }
+
+  capItems.forEach(item => {
+    item.addEventListener('click', () => {
+      capItems.forEach(i => i.classList.remove('active'));
+      item.classList.add('active');
+      moveBg(item);
+      const idx = parseInt(item.dataset.index);
+      capDesc.textContent = capDescs[idx];
+      if (capVideos[idx]) {
+        capVideo.src = capVideos[idx];
+        capVideo.style.display = 'block';
+        capVideo.play();
+      } else {
+        capVideo.style.display = 'none';
+      }
+    });
+  });
+
+  // 초기 bg 위치
+  moveBg(capItems[0]);
+
+
+
+  // ── 섹션 13 메뉴 ──
+  const s13MenuEl = document.getElementById('s13Menu');
+  const s13MenuBg = document.getElementById('s13MenuBg');
+  const s13Items  = Array.from(s13MenuEl.querySelectorAll('.s13-item'));
+  const s13Desc   = document.getElementById('s13Desc');
+  const s13Video  = document.getElementById('s13Video');
+  const s13Img    = document.getElementById('s13Img');
+  const s13Media  = [
+    { type: 'video', src: 'assets/videos/s13-feat-1.webm' },
+    { type: 'video', src: 'assets/videos/s13-feat-2.webm' },
+    { type: 'video', src: 'assets/videos/s13-feat-3.webm' },
+    { type: 'image', src: 'assets/images/s13-feat-4.jpg' },
+    { type: 'image', src: 'assets/images/s13-feat-5.jpg' }
+  ];
+  const s13Descs  = [
+    'Delivers dynamic camera movement templates tailored for portrait, close-up, and long-range shots, ensuring you nail every shot!',
+    'Choose from Dronie, Circle, Helix, Rocket, Boomerang, and Asteroid for automated cinematic shots with a single tap.',
+    'Capture stunning time-lapse videos with Free, Circle, Course Lock, and Waypoint modes for mesmerizing footage.',
+    'Shoot sphere, 180°, wide-angle, and vertical panoramas with ease for breathtaking wide-view imagery.',
+    'Transfer footage to your phone at up to 60MB/s with QuickTransfer, so you can share your shots instantly.'
+  ];
+
+  function s13MoveBg(item) {
+    const menuRect = s13MenuEl.getBoundingClientRect();
+    const itemRect = item.getBoundingClientRect();
+    const pt = parseFloat(getComputedStyle(item).paddingTop) || 0;
+    s13MenuBg.style.top    = (itemRect.top - menuRect.top + pt - 8) + 'px';
+    s13MenuBg.style.height = (itemRect.height - pt + 16) + 'px';
+  }
+
+  s13Items.forEach(item => {
+    item.addEventListener('click', () => {
+      s13Items.forEach(i => i.classList.remove('active'));
+      item.classList.add('active');
+      s13MoveBg(item);
+      const idx = parseInt(item.dataset.index);
+      s13Desc.textContent = s13Descs[idx];
+      const m = s13Media[idx];
+      if (m.type === 'video') {
+        s13Video.src = m.src;
+        s13Video.style.display = 'block';
+        s13Img.style.display = 'none';
+        s13Video.play();
+      } else {
+        s13Img.src = m.src;
+        s13Img.style.display = 'block';
+        s13Video.style.display = 'none';
+      }
+    });
+  });
+
+  s13MoveBg(s13Items[0]);
 
   // ── SECTION 6 피처 아코디언 ──
   const featList = document.getElementById('featList');
