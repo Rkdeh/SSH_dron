@@ -1924,24 +1924,9 @@
       white-space: nowrap;
       min-width: 28px;
     }
-
-    /* ── 반응형 Scale Wrapper ── */
-    #scale-wrap {
-      width: 1920px;
-      transform-origin: top left;
-      position: relative;
-    }
-    body { overflow-x: hidden; }
-
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .navbar { padding: 0 16px; }
-    }
   </style>
 </head>
 <body>
-
-<div id="scale-wrap">
 
 <!-- ── SECTION 1: HERO ── -->
 <section class="hero">
@@ -2548,8 +2533,6 @@
 
 
 
-</div><!-- /scale-wrap -->
-
 <!-- ── 드론 (fixed, 섹션1→섹션2 스크롤 애니메이션) ── -->
 <div class="main-drone" id="mainDrone">
   <img src="assets/images/drone-hero.png" alt="DriftCam Drone">
@@ -2585,19 +2568,17 @@
   }
 
   function updateDrone() {
-    const scale = Math.min(1, window.innerWidth / 1920);
-    const scrollY = window.scrollY / scale;
-    const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight) / scale;
+    const scrollY = window.scrollY;
+    const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
     const animEnd = Math.min(SECTION1_H, maxScroll);
     const offset = getOffset();
 
     const t = Math.min(1, scrollY / animEnd);
     const top = t < 1 ? (S2_TOP - animEnd) * t : S2_TOP - scrollY;
-    // scale-wrap 적용 시 fixed 요소는 실제 화면 픽셀 기준으로 위치 설정
     const left = offset + S2_LEFT;
 
-    mainDrone.style.top  = (top * scale) + 'px';
-    mainDrone.style.left = (left * scale) + 'px';
+    mainDrone.style.top  = top + 'px';
+    mainDrone.style.left = left + 'px';
 
     if (t >= 1 && !sec2Revealed) {
       sec2Revealed = true;
@@ -2951,38 +2932,6 @@
     featRows.forEach(r => r.classList.remove('expanded'));
     featList.classList.remove('has-hover');
   });
-
-  // ── 반응형 스케일 ──
-  (function() {
-    var wrap = document.getElementById('scale-wrap');
-    if (!wrap) return;
-
-    function getScale() {
-      return Math.min(1, window.innerWidth / 1920);
-    }
-
-    function applyScale() {
-      var scale = getScale();
-      wrap.style.transform = 'scale(' + scale + ')';
-      document.body.style.height = wrap.offsetHeight * scale + 'px';
-
-      var drone = document.querySelector('.main-drone');
-      if (drone) {
-        drone.style.left = (340 * scale) + 'px';
-        drone.style.width = (1320 * scale) + 'px';
-        drone.style.height = (1320 * scale) + 'px';
-      }
-
-      var si = document.querySelector('.scroll-indicator');
-      if (si) {
-        si.style.bottom = (40 * scale) + 'px';
-        si.style.right = (40 * scale) + 'px';
-      }
-    }
-
-    applyScale();
-    window.addEventListener('resize', applyScale);
-  })();
 </script>
 
 </body>
