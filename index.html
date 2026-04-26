@@ -430,6 +430,23 @@
       text-transform: uppercase;
     }
 
+    .hdr-indicator {
+      position: absolute;
+      bottom: 58px;
+      right: 770px;
+      display: flex;
+      gap: 4px;
+      align-items: center;
+    }
+    .hdr-indicator-bar {
+      width: 32px;
+      height: 4px;
+      background: rgba(0, 0, 0, 0.08);
+    }
+    .hdr-indicator-bar.active {
+      background: #000000;
+    }
+
     /* ── SECTION 5: RAW-SOME PHOTOS ── */
     .raw-section {
       position: relative;
@@ -2075,6 +2092,14 @@
     <p>stunning results.</p>
   </div>
 
+  <div class="hdr-indicator" id="hdrIndicator">
+    <div class="hdr-indicator-bar active"></div>
+    <div class="hdr-indicator-bar"></div>
+    <div class="hdr-indicator-bar"></div>
+    <div class="hdr-indicator-bar"></div>
+    <div class="hdr-indicator-bar"></div>
+  </div>
+
 </section>
 
 <!-- ── SECTION 5: RAW-SOME PHOTOS ── -->
@@ -2652,6 +2677,11 @@
   rightTrack.style.width = `${SLIDE_W * HDR_COUNT * 2}px`;
 
   let hdrIndex = 0;
+  const hdrBars = document.querySelectorAll('.hdr-indicator-bar');
+
+  function updateHdrIndicator(idx) {
+    hdrBars.forEach((bar, i) => bar.classList.toggle('active', i === idx));
+  }
 
   function advanceHdr() {
     hdrIndex++;
@@ -2659,6 +2689,7 @@
     rightTrack.style.transition = TRANSITION;
     leftTrack.style.transform  = `translateX(-${hdrIndex * SLIDE_W}px)`;
     rightTrack.style.transform = `translateX(-${hdrIndex * SLIDE_W}px)`;
+    updateHdrIndicator(hdrIndex % HDR_COUNT);
 
     // 복제 구간 끝나면 애니메이션 없이 원위치
     if (hdrIndex === HDR_COUNT) {
