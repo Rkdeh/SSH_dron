@@ -269,44 +269,47 @@
       height: 1040px;
       border-radius: 20px;
       overflow: hidden;
+      clip-path: inset(520px 940px 520px 940px round 20px);
+      opacity: 0;
     }
 
     .imaging-card video {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
+      z-index: 0;
     }
 
-    .imaging-title-1 {
+    .imaging-title-group {
       position: absolute;
-      left: 91px;
-      top: 110px;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 240px;
-      line-height: 240px;
-      color: #fff;
-      text-transform: uppercase;
-      white-space: nowrap;
-      z-index: 1;
+      left: 70px;
+      top: 90px;
+      z-index: 2;
+      pointer-events: none;
+      transform: translateX(870px);
+      transition: transform 1600ms cubic-bezier(0.4,0,0.2,1);
+    }
+    .imaging-title-group.expanded {
+      transform: translateX(0);
     }
 
+    .imaging-title-1,
     .imaging-title-2 {
-      position: absolute;
-      left: 91px;
-      top: 290px;
       font-family: 'Bebas Neue', sans-serif;
       font-size: 240px;
       line-height: 240px;
       color: #fff;
       text-transform: uppercase;
       white-space: nowrap;
-      z-index: 1;
     }
 
     .imaging-desc {
       position: absolute;
-      left: 1318px;
-      top: 810px;
+      right: 70px;
+      bottom: 90px;
+      text-align: left;
       font-size: 24px;
       font-weight: 500;
       line-height: 32px;
@@ -314,7 +317,13 @@
       color: #fff;
       text-transform: uppercase;
       white-space: nowrap;
-      z-index: 1;
+      transform: translateX(-870px);
+      transition: transform 1600ms cubic-bezier(0.4,0,0.2,1);
+      z-index: 2;
+      pointer-events: none;
+    }
+    .imaging-desc.expanded {
+      transform: translateX(0);
     }
 
     /* ── SECTION 4: 4K/60fps HDR ── */
@@ -1924,9 +1933,24 @@
       white-space: nowrap;
       min-width: 28px;
     }
+
+    /* ── 반응형 Scale Wrapper ── */
+    #scale-wrap {
+      width: 1920px;
+      transform-origin: top left;
+      position: relative;
+    }
+    body { overflow-x: hidden; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .navbar { padding: 0 16px; }
+    }
   </style>
 </head>
 <body>
+
+<div id="scale-wrap">
 
 <!-- ── SECTION 1: HERO ── -->
 <section class="hero">
@@ -1997,18 +2021,20 @@
 <!-- ── SECTION 3: High-Def Imaging ── -->
 <section class="imaging-section">
   <div class="imaging-card">
-    <video autoplay muted loop playsinline>
+    <video id="imagingVideo" muted loop playsinline>
       <source src="assets/videos/highdef-imaging.webm" type="video/webm">
     </video>
-  </div>
-  <p class="imaging-title-1">High-Def</p>
-  <p class="imaging-title-2">Imaging</p>
-  <div class="imaging-desc">
-    <p>Capture more complex details with</p>
-    <p>Mini 4 Pro's 1/1.3" CMOS sensor,</p>
-    <p>Dual Native ISO Fusion, and f/1.7 aperture,</p>
-    <p>delivering high dynamic range for</p>
-    <p>stunning results.</p>
+    <div class="imaging-title-group">
+      <p class="imaging-title-1">High-Def</p>
+      <p class="imaging-title-2">Imaging</p>
+    </div>
+    <div class="imaging-desc">
+      <p>Capture more complex details with</p>
+      <p>Mini 4 Pro's 1/1.3" CMOS sensor,</p>
+      <p>Dual Native ISO Fusion, and f/1.7 aperture,</p>
+      <p>delivering high dynamic range for</p>
+      <p>stunning results.</p>
+    </div>
   </div>
 </section>
 
@@ -2533,6 +2559,8 @@
 
 
 
+</div><!-- /scale-wrap -->
+
 <!-- ── 드론 (fixed, 섹션1→섹션2 스크롤 애니메이션) ── -->
 <div class="main-drone" id="mainDrone">
   <img src="assets/images/drone-hero.png" alt="DriftCam Drone">
@@ -2568,17 +2596,19 @@
   }
 
   function updateDrone() {
-    const scrollY = window.scrollY;
-    const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    const scale = Math.min(1, window.innerWidth / 1920);
+    const scrollY = window.scrollY / scale;
+    const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight) / scale;
     const animEnd = Math.min(SECTION1_H, maxScroll);
     const offset = getOffset();
 
     const t = Math.min(1, scrollY / animEnd);
     const top = t < 1 ? (S2_TOP - animEnd) * t : S2_TOP - scrollY;
+    // scale-wrap 적용 시 fixed 요소는 실제 화면 픽셀 기준으로 위치 설정
     const left = offset + S2_LEFT;
 
-    mainDrone.style.top  = top + 'px';
-    mainDrone.style.left = left + 'px';
+    mainDrone.style.top  = (top * scale) + 'px';
+    mainDrone.style.left = (left * scale) + 'px';
 
     if (t >= 1 && !sec2Revealed) {
       sec2Revealed = true;
@@ -2932,6 +2962,123 @@
     featRows.forEach(r => r.classList.remove('expanded'));
     featList.classList.remove('has-hover');
   });
+
+  // ── 섹션 3: High-Def Imaging 카드 인터랙션 ──
+  (function() {
+    var card       = document.querySelector('.imaging-card');
+    var section    = document.querySelector('.imaging-section');
+    var video      = document.getElementById('imagingVideo');
+    if (!card || !section) return;
+
+    var triggered = false;
+    // 스크롤 잠금 (checkTrigger에서 즉시 호출)
+    var lockedY = 0;
+    function lockScroll() { window.scrollTo(0, lockedY); }
+
+    function setClip(t, r, b, l, dur, ease) {
+      card.style.transition = dur > 0
+        ? 'clip-path ' + dur + 'ms ' + (ease || 'ease') + ', opacity ' + dur + 'ms ease'
+        : 'none';
+      card.style.clipPath = 'inset(' + t + 'px ' + r + 'px ' + b + 'px ' + l + 'px round 20px)';
+    }
+
+    function startAnimation() {
+      if (triggered) return;
+      triggered = true;
+
+      setClip(520, 940, 520, 940, 0);
+      card.style.opacity = '0';
+
+      setTimeout(function() {
+        card.style.transition = 'clip-path 200ms ease, opacity 200ms ease';
+        card.style.opacity = '1';
+        card.style.clipPath = 'inset(519.5px 889.5px 519.5px 889.5px round 20px)';
+      }, 300);
+
+      setTimeout(function() {
+        card.style.transition = 'clip-path 200ms ease';
+        card.style.clipPath = 'inset(520px 940px 520px 940px round 20px)';
+      }, 600);
+
+      setTimeout(function() {
+        card.style.transition = 'clip-path 700ms cubic-bezier(0.4,0,0.2,1)';
+        card.style.clipPath = 'inset(0px 939px 0px 939px round 20px)';
+      }, 1200);
+
+      setTimeout(function() {
+        card.style.transition = 'clip-path 1600ms cubic-bezier(0.4,0,0.2,1)';
+        card.style.clipPath = 'inset(0px 0px 0px 0px round 20px)';
+        var tg = card.querySelector('.imaging-title-group');
+        var dsc = card.querySelector('.imaging-desc');
+        if (tg) tg.classList.add('expanded');
+        if (dsc) dsc.classList.add('expanded');
+      }, 1900);
+
+      setTimeout(function() {
+        window.removeEventListener('scroll', lockScroll);
+        if (video) video.play();
+      }, 3600);
+    }
+
+    function checkTrigger() {
+      if (triggered) return;
+      var rect  = section.getBoundingClientRect();
+      var scale = Math.min(1, window.innerWidth / 1920);
+      if (rect.bottom * scale <= window.innerHeight) {
+        window.removeEventListener('scroll', checkTrigger);
+        // 즉시 스크롤 잠금
+        lockedY = window.scrollY;
+        window.addEventListener('scroll', lockScroll);
+        setTimeout(startAnimation, 1000);
+      }
+    }
+
+    window.addEventListener('scroll', checkTrigger, { passive: true });
+    checkTrigger();
+  })();
+
+  // ── 반응형 스케일 ──
+  (function() {
+    var wrap = document.getElementById('scale-wrap');
+    if (!wrap) return;
+
+    function getScale() {
+      return Math.min(1, window.innerWidth / 1920);
+    }
+
+    function applyScale() {
+      var vw = window.innerWidth;
+      var scale = getScale();
+
+      if (scale < 1) {
+        // 뷰포트가 1920px 미만: scale 축소, top-left 기준
+        wrap.style.transform = 'scale(' + scale + ')';
+        wrap.style.marginLeft = '0';
+        document.body.style.height = wrap.offsetHeight * scale + 'px';
+      } else {
+        // 뷰포트가 1920px 이상: 스케일 없이 가운데 정렬
+        wrap.style.transform = 'none';
+        wrap.style.marginLeft = ((vw - 1920) / 2) + 'px';
+        document.body.style.height = '';
+      }
+
+      var drone = document.querySelector('.main-drone');
+      if (drone) {
+        drone.style.left = (340 * scale + (vw > 1920 ? (vw - 1920) / 2 : 0)) + 'px';
+        drone.style.width = (1320 * scale) + 'px';
+        drone.style.height = (1320 * scale) + 'px';
+      }
+
+      var si = document.querySelector('.scroll-indicator');
+      if (si) {
+        si.style.bottom = (40 * scale) + 'px';
+        si.style.right = (40 * scale) + 'px';
+      }
+    }
+
+    applyScale();
+    window.addEventListener('resize', applyScale);
+  })();
 </script>
 
 </body>
