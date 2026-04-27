@@ -1,0 +1,1955 @@
+﻿    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #f1f1f5;
+      font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+    }
+
+    /* ── HERO SECTION ── */
+    .hero {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      background: #f1f1f5;
+      overflow: hidden;
+      margin: 0 auto;
+    }
+
+    /* DRIFTCAM 배경 텍스트 */
+    .hero-title {
+      position: absolute;
+      top: 20px;
+      left: 0;
+      width: 1920px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 631px;
+      line-height: 757px;
+      color: #111;
+      text-transform: uppercase;
+      white-space: nowrap;
+      pointer-events: none;
+      user-select: none;
+      text-align: center;
+    }
+
+    /* 드론 이미지 (공통, fixed) */
+    .main-drone {
+      position: fixed;
+      top: 0;
+      left: 340px;
+      width: 1320px;
+      height: 1320px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .main-drone img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    /* ── NAVBAR ── */
+    .navbar {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(1320px, calc(100vw - 40px));
+      height: 80px;
+      background: rgba(241, 241, 245, 0.3);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 20px;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      width: 63px;
+      height: 36px;
+      flex-shrink: 0;
+    }
+
+    .nav-logo img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links li {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      letter-spacing: -0.4px;
+      color: #111;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .nav-icon {
+      width: 24px;
+      height: 24px;
+      display: block;
+      cursor: pointer;
+    }
+
+    .store-btn {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: #111;
+      color: #fff;
+      border: none;
+      border-radius: 100px;
+      padding: 8px 16px;
+      cursor: pointer;
+      font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: -0.4px;
+      white-space: nowrap;
+    }
+
+    .store-btn img {
+      width: 24px;
+      height: 24px;
+    }
+
+    /* ── SECTION 2: 작품 설명 ── */
+    .desc-section {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      background: #f1f1f5;
+      overflow: hidden;
+      margin: 0 auto;
+    }
+
+    .desc-ellipse {
+      position: absolute;
+      left: 603px;
+      top: 793px;
+      width: 661px;
+      height: 95px;
+      background: radial-gradient(ellipse, rgba(0,0,0,0.2) 0%, transparent 70%);
+      filter: blur(30px);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 1200ms ease;
+    }
+
+    .desc-anno-left {
+      position: absolute;
+      left: 140px;
+      top: 288px;
+      width: 720px;
+      height: 153px;
+      z-index: 3;
+      opacity: 0;
+      transition: opacity 1200ms ease;
+    }
+
+    .desc-anno-left img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .desc-anno-right {
+      position: absolute;
+      left: 1060px;
+      top: 640px;
+      width: 720px;
+      height: 153px;
+      transform: rotate(180deg);
+      z-index: 3;
+      opacity: 0;
+      transition: opacity 1200ms ease;
+    }
+
+    .desc-anno-right img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .desc-left {
+      position: absolute;
+      left: 140px;
+      top: 256px;
+      z-index: 3;
+      opacity: 0;
+      transition: opacity 1200ms ease;
+    }
+
+    .desc-right {
+      position: absolute;
+      left: 1359px;
+      top: 761px;
+      z-index: 3;
+      opacity: 0;
+      transition: opacity 1200ms ease;
+    }
+
+    .desc-icon {
+      display: block;
+      width: 24px;
+      height: 24px;
+      margin-bottom: 0;
+    }
+
+    .desc-icon--rotated {
+      transform: rotate(-90deg);
+    }
+
+    .desc-heading {
+      font-size: 60px;
+      font-weight: 600;
+      line-height: 80px;
+      letter-spacing: -1.5px;
+      color: #111;
+      white-space: nowrap;
+      margin: 20px 0 0 0;
+    }
+
+    .desc-body {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      letter-spacing: -0.4px;
+      color: #4a4a4a;
+      margin-top: 8px;
+    }
+
+    /* ── SECTION 3: High-Def Imaging ── */
+    .imaging-section {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      background: #f1f1f5;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .imaging-card {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 1879px;
+      height: 1040px;
+      border-radius: 20px;
+      overflow: hidden;
+      clip-path: inset(520px 940px 520px 940px round 20px);
+      opacity: 0;
+    }
+
+    .imaging-card video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .imaging-title-group {
+      position: absolute;
+      left: 70px;
+      top: 90px;
+      z-index: 2;
+      pointer-events: none;
+      transform: translateX(870px);
+      transition: transform 1600ms cubic-bezier(0.4,0,0.2,1);
+    }
+    .imaging-title-group.expanded {
+      transform: translateX(0);
+    }
+
+    .imaging-title-1,
+    .imaging-title-2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 240px;
+      line-height: 240px;
+      color: #fff;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .imaging-desc {
+      position: absolute;
+      right: 70px;
+      bottom: 90px;
+      text-align: left;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 32px;
+      letter-spacing: -0.6px;
+      color: #fff;
+      text-transform: uppercase;
+      white-space: nowrap;
+      transform: translateX(-870px);
+      transition: transform 1600ms cubic-bezier(0.4,0,0.2,1);
+      z-index: 2;
+      pointer-events: none;
+    }
+    .imaging-desc.expanded {
+      transform: translateX(0);
+    }
+
+    /* ── SECTION 4: 4K/60fps HDR ── */
+    .hdr-section {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      background: #f1f1f5;
+      margin: 0 auto;
+    }
+
+    /* 왼쪽 패널 */
+    .hdr-left {
+      position: absolute;
+      left: 20px;
+      top: 120px;
+      width: 930px;
+      height: 902px;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .hdr-left-track {
+      display: flex;
+      width: calc(930px * 5);
+      height: 100%;
+      transition: transform 0.6s ease;
+    }
+
+    .hdr-left-track img {
+      width: 930px;
+      height: 902px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    /* 오른쪽 패널 */
+    .hdr-right {
+      position: absolute;
+      left: 970px;
+      top: 120px;
+      width: 930px;
+      height: 520px;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .hdr-right-track {
+      display: flex;
+      width: calc(930px * 5);
+      height: 100%;
+      transition: transform 0.6s ease;
+    }
+
+    .hdr-right-track video {
+      width: 930px;
+      height: 520px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    /* 텍스트 */
+    .hdr-label {
+      position: absolute;
+      left: 978px;
+      top: 680px;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: -0.4px;
+      color: #000;
+    }
+
+    .hdr-title {
+      position: absolute;
+      left: 974px;
+      top: 708px;
+      font-size: 80px;
+      font-weight: 500;
+      line-height: 100px;
+      letter-spacing: -2px;
+      color: #111;
+      white-space: nowrap;
+    }
+
+    .hdr-icon {
+      position: absolute;
+      left: 1517px;
+      top: 728px;
+      width: 60px;
+      height: 60px;
+    }
+
+    .hdr-desc {
+      position: absolute;
+      left: 974px;
+      top: 828px;
+      width: 512px;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 32px;
+      letter-spacing: -0.6px;
+      color: #4a4a4a;
+      text-transform: uppercase;
+    }
+
+    .hdr-indicator {
+      position: absolute;
+      bottom: 58px;
+      right: 770px;
+      display: flex;
+      gap: 4px;
+      align-items: center;
+    }
+    .hdr-indicator-bar {
+      width: 32px;
+      height: 4px;
+      background: rgba(0, 0, 0, 0.08);
+    }
+    .hdr-indicator-bar.active {
+      background: #000000;
+    }
+
+    /* ── SECTION 5: RAW-SOME PHOTOS ── */
+    .raw-section {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      background: #f1f1f5;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .raw-title {
+      position: absolute;
+      left: calc(50% - 520px);
+      top: 160px;
+      width: 1041px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 180px;
+      line-height: 180px;
+      color: #111;
+      text-transform: uppercase;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .raw-carousel-outer {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 324px;
+      width: 1920px;
+      height: 614px;
+      overflow: hidden;
+    }
+
+    .raw-carousel-inner {
+      position: absolute;
+      left: 338px;
+      top: 0;
+      height: 614px;
+    }
+
+    .raw-track {
+      display: flex;
+      align-items: center;
+      gap: 100px;
+      height: 614px;
+      transition: transform 0.6s ease;
+    }
+
+    .raw-slide {
+      flex-shrink: 0;
+      border-radius: 20px;
+      overflow: hidden;
+      width: 1080px;
+      height: 474px;
+      transition: width 0.6s ease, height 0.6s ease;
+    }
+
+    .raw-slide.active {
+      width: 1245px;
+      height: 614px;
+    }
+
+    .raw-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .raw-nav {
+      position: absolute;
+      top: calc(324px + 282px);
+      left: 313px;
+      width: 1295px;
+      height: 50px;
+      pointer-events: none;
+    }
+
+    .raw-btn {
+      position: absolute;
+      top: 0;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: all;
+      padding: 6.25px;
+      z-index: 5;
+    }
+
+    .raw-btn img {
+      width: 37.5px;
+      height: 37.5px;
+    }
+
+    .raw-btn-prev {
+      left: 0;
+      transform: rotate(180deg);
+    }
+
+    .raw-btn-next {
+      right: 0;
+    }
+
+    /* ── SECTION 6: FEATURES LIST ── */
+    .feat-section {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      background: #f1f1f5;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .feat-list {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 1246px;
+    }
+
+    .feat-row {
+      position: relative;
+      height: 122px;
+      overflow: hidden;
+      transition: height 0.4s ease;
+      cursor: pointer;
+    }
+
+    .feat-row + .feat-row::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #111;
+      transition: opacity 0.3s ease;
+    }
+
+    /* 헤더: 행별 들여쓰기 위치 */
+    .feat-header {
+      position: absolute;
+      top: 12px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .feat-row-1 .feat-header { left: 227px; }
+    .feat-row-2 .feat-header { left: 337.5px; }
+    .feat-row-3 .feat-header { left: 403.5px; }
+
+    .feat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 24px;
+      line-height: 32px;
+      color: #4a4a4a;
+      flex-shrink: 0;
+    }
+
+    .feat-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 100px;
+      line-height: 100px;
+      color: #111;
+      transition: opacity 0.3s ease;
+    }
+
+    /* 비활성 행 타이틀 흐리기 */
+    .feat-list.has-hover .feat-row:not(.expanded) .feat-title,
+    .feat-list.has-hover .feat-row:not(.expanded) .feat-num,
+    .feat-list.has-hover .feat-row:not(.expanded)::before {
+      opacity: 0.4;
+    }
+
+    /* 확장 콘텐츠: 항상 가운데 정렬 */
+    .feat-body {
+      position: absolute;
+      top: 132px; /* 12(top) + 100(title) + 20(gap) */
+      left: 50%;
+      transform: translateX(-50%);
+      width: 793px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding-bottom: 32px;
+      opacity: 0;
+      transition: opacity 0.25s ease 0.1s;
+    }
+
+    .feat-desc {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      letter-spacing: -0.4px;
+      color: #000;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .feat-video {
+      width: 600px;
+      height: 336px;
+      border-radius: 12px;
+      object-fit: cover;
+      flex-shrink: 0;
+      display: block;
+    }
+
+    .feat-row.expanded {
+      height: 568px; /* 12 + 100 + 20 + 48(desc) + 20 + 336(video) + 32(bottom) */
+    }
+
+    .feat-row.expanded .feat-body {
+      opacity: 1;
+    }
+
+    /* ── SECTION 7: 더 좋아진 비행 ── */
+    .flight-section {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .flight-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      pointer-events: none;
+    }
+
+    .flight-text {
+      position: absolute;
+      left: 960.5px;
+      transform: translateX(-50%);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 240px;
+      line-height: 240px;
+      color: #fff;
+      text-transform: uppercase;
+      white-space: nowrap;
+      text-align: center;
+      mix-blend-mode: exclusion;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .flight-text-1 { top: 330px; }
+    .flight-text-2 { top: 510px; }
+
+    /* ── SECTION 8: 기능 설명 전 ── */
+    .sense-wrapper {
+      width: 1920px;
+      height: calc(200vh + 200px); /* 100vh 진입 + 100vh 비디오 확장 + 200 홀드 */
+      margin: 0 auto;
+    }
+
+    .sense-section {
+      position: sticky;
+      top: 0;
+      width: 1920px;
+      height: 100vh;
+      background: #f1f1f5;
+      overflow: hidden;
+    }
+
+    .sense-title-1 {
+      position: absolute;
+      left: 688.5px;
+      top: 200px;
+      transform: translateX(calc(-50% - 1920px));
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 180px;
+      line-height: 180px;
+      color: #111;
+      text-transform: uppercase;
+      white-space: nowrap;
+      text-align: center;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .sense-title-2 {
+      position: absolute;
+      left: 1250px;
+      top: 720px;
+      transform: translateX(calc(-50% + 1920px));
+      width: 1340px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 180px;
+      line-height: 180px;
+      color: #111;
+      text-transform: uppercase;
+      text-align: center;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .sense-video {
+      position: absolute;
+      left: 653px;
+      top: 380px;
+      width: 614px;
+      height: 320px;
+      border-radius: 10px;
+      object-fit: cover;
+      z-index: 2;
+    }
+
+    .sense-desc {
+      position: absolute;
+      left: calc(50% + 0.5px);
+      top: 907px;
+      transform: translateX(-50%);
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 32px;
+      letter-spacing: -0.6px;
+      color: #4a4a4a;
+      text-align: center;
+      text-transform: uppercase;
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 800ms ease;
+    }
+
+    /* ── SECTION 9: 배터리 ── */
+    .battery-section {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      background: #f1f1f5;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .battery-num {
+      position: absolute;
+      left: 341px;
+      top: 296px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 24px;
+      line-height: 32px;
+      color: #111;
+      white-space: nowrap;
+    }
+
+    .battery-title {
+      position: absolute;
+      left: 337px;
+      top: 338px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 80px;
+      line-height: 80px;
+      color: #111;
+      white-space: nowrap;
+    }
+
+    .battery-body {
+      position: absolute;
+      left: 341px;
+      top: 518px;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 32px;
+      letter-spacing: -0.6px;
+      color: #000;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .battery-min-1 {
+      position: absolute;
+      left: 337px;
+      top: 676px;
+      font-size: 40px;
+      font-weight: 500;
+      line-height: 60px;
+      letter-spacing: -1px;
+      color: #31a2f3;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .battery-min-2 {
+      position: absolute;
+      left: 557px;
+      top: 676px;
+      font-size: 40px;
+      font-weight: 500;
+      line-height: 60px;
+      letter-spacing: -1px;
+      color: #31a2f3;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .battery-label-1 {
+      position: absolute;
+      left: 337px;
+      top: 736px;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: -0.4px;
+      color: #666;
+      white-space: nowrap;
+    }
+
+    .battery-label-2 {
+      position: absolute;
+      left: 557px;
+      top: 736px;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: -0.4px;
+      color: #666;
+      white-space: nowrap;
+    }
+
+    /* 배터리 이미지 컴포넌트 */
+    .battery-img-wrap {
+      position: absolute;
+      left: 840px;
+      top: 120px;
+      width: 840px;
+      height: 840px;
+    }
+
+    .battery-shadow {
+      position: absolute;
+      left: 98px;
+      top: 655px;
+      width: 655px;
+      height: 103px;
+      overflow: visible;
+      animation: shadowPulse 2400ms ease-in-out infinite;
+    }
+
+    @keyframes batteryFloat {
+      0%   { transform: translate(-50%, -50%) translateY(0); }
+      50%  { transform: translate(-50%, -50%) translateY(-20px); }
+      100% { transform: translate(-50%, -50%) translateY(0); }
+    }
+
+    @keyframes shadowPulse {
+      0%   { opacity: 0.12; }
+      50%  { opacity: 0.06; }
+      100% { opacity: 0.12; }
+    }
+
+    .battery-shadow-inner {
+      position: absolute;
+      top: -58.25%;
+      right: -7.63%;
+      bottom: -48.54%;
+      left: -9.16%;
+    }
+
+    .battery-shadow-inner img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      max-width: none;
+    }
+
+    .battery-img {
+      position: absolute;
+      left: 50%;
+      top: calc(50% + 20px);
+      width: 840px;
+      height: 840px;
+      overflow: hidden;
+      animation: batteryFloat 2400ms ease-in-out infinite;
+    }
+
+    .battery-img img {
+      position: absolute;
+      top: 4.89%;
+      left: -2.43%;
+      width: 118.47%;
+      height: 90.41%;
+      object-fit: contain;
+    }
+
+    /* ── SECTION 10: 컨트롤러 ── */
+    .ctrl-section {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      background: #f1f1f5;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    /* ── 섹션 11: Deliver a Masterpiece ── */
+    .master-wrapper {
+      width: 1920px;
+      height: calc(200vh + 1500px);
+      margin: 0 auto;
+    }
+    .master-section {
+      position: sticky;
+      top: 0;
+      width: 1920px;
+      height: 100vh;
+      background: #f1f1f5;
+      overflow: hidden;
+    }
+    .master-title {
+      position: absolute;
+      left: 960px;
+      top: 120px;
+      transform: translateX(-50%);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 240px;
+      line-height: 240px;
+      color: #111;
+      text-align: center;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .master-sub {
+      position: absolute;
+      left: 50%;
+      top: 580px;
+      transform: translateX(-50%);
+      font-family: 'Pretendard Variable', sans-serif;
+      font-size: 24px;
+      line-height: 80px;
+      color: #000;
+      letter-spacing: -0.6px;
+      white-space: nowrap;
+    }
+    .master-card {
+      position: absolute;
+      left: 50%;
+      bottom: 20px;
+      transform: translateX(-50%);
+      width: 532px;
+      height: 280px;
+      border-radius: 20px;
+      box-shadow: 0px 2px 4px rgba(0,0,0,0.12);
+      overflow: hidden;
+      background: #ccc;
+    }
+    #secondCard {
+      width: 1760px;
+      height: 924px;
+      transform: translateX(-50%) translateY(100vh);
+    }
+    .master-card video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .mc-title, .mc-sub, .mc-desc-box {
+      position: absolute;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      pointer-events: none;
+    }
+    .mc-title {
+      left: 60px;
+      top: 40px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 80px;
+      line-height: 80px;
+      color: #000;
+      white-space: nowrap;
+    }
+    .mc-sub {
+      left: 60px;
+      top: 120px;
+      font-family: 'Pretendard Variable', sans-serif;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 32px;
+      color: #000;
+      letter-spacing: -0.6px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .mc-desc-box {
+      bottom: 30px;
+      right: 30px;
+      width: 400px;
+      background: rgba(102,102,102,0.5);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px 40px;
+    }
+    .mc-desc-box p {
+      font-family: 'Pretendard Variable', sans-serif;
+      font-size: 16px;
+      line-height: 24px;
+      color: #fff;
+      letter-spacing: -0.4px;
+      width: 320px;
+    }
+
+    .ctrl-num {
+      position: absolute;
+      left: 341px;
+      top: 300px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 24px;
+      line-height: 32px;
+      color: #111;
+      white-space: nowrap;
+    }
+
+    .ctrl-title {
+      position: absolute;
+      left: 337px;
+      top: 342px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 80px;
+      line-height: 80px;
+      color: #111;
+      white-space: nowrap;
+    }
+
+    .ctrl-body {
+      position: absolute;
+      left: 341px;
+      top: 522px;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 32px;
+      letter-spacing: -0.6px;
+      color: #000;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .ctrl-stat {
+      position: absolute;
+      top: 680px;
+      display: flex;
+      align-items: baseline;
+      gap: 0;
+    }
+
+    .ctrl-stat-num {
+      position: absolute;
+      left: 337px;
+      top: 680px;
+      font-size: 80px;
+      font-weight: 700;
+      line-height: 100px;
+      letter-spacing: -2px;
+      color: #31a2f3;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .ctrl-stat-unit {
+      position: absolute;
+      left: 439px;
+      top: 714px;
+      font-size: 40px;
+      font-weight: 600;
+      line-height: 60px;
+      letter-spacing: -1px;
+      color: #31a2f3;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    /* 컨트롤러 이미지 */
+    .ctrl-img-wrap {
+      position: absolute;
+      left: 840px;
+      top: 120px;
+      width: 840px;
+      height: 840px;
+    }
+
+    .ctrl-shadow {
+      position: absolute;
+      left: 99px;
+      top: 572px;
+      width: 692px;
+      height: 192px;
+      overflow: visible;
+      animation: ctrlShadow 2400ms ease-in-out infinite;
+    }
+
+    .ctrl-shadow-inner {
+      position: absolute;
+      top: -31.25%;
+      right: -7.23%;
+      bottom: -26.04%;
+      left: -8.67%;
+    }
+
+    .ctrl-shadow-inner img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      max-width: none;
+    }
+
+    .ctrl-img {
+      position: absolute;
+      left: 50%;
+      top: calc(50% + 20px);
+      width: 840px;
+      height: 840px;
+      overflow: hidden;
+      animation: batteryFloat 2400ms ease-in-out infinite;
+    }
+
+    .ctrl-img img {
+      position: absolute;
+      top: 4.02%;
+      left: -6.94%;
+      width: 120.51%;
+      height: 91.97%;
+      object-fit: contain;
+    }
+
+    @keyframes ctrlShadow {
+      0%   { opacity: 0.12; }
+      50%  { opacity: 0.06; }
+      100% { opacity: 0.12; }
+    }
+
+
+    /* ── 섹션 12: Packed with Powerful ── */
+    .cap-section {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      margin: 0 auto;
+      background: #f1f1f5;
+      overflow: hidden;
+    }
+    .cap-title {
+      position: absolute;
+      left: 160px;
+      top: 160px;
+      z-index: 1;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 100px;
+      line-height: 100px;
+      color: #111;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .cap-card {
+      position: absolute;
+      left: 500px;
+      top: 304px;
+      width: 1260px;
+      height: 660px;
+      border-radius: 20px;
+      box-shadow: 0px 2px 4px rgba(0,0,0,0.12);
+      overflow: hidden;
+      background: #ccc;
+    }
+    .cap-card img,
+    .cap-card video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .cap-menu {
+      position: absolute;
+      left: 160px;
+      top: 368px;
+      width: 320px;
+      height: 299px;
+    }
+    .cap-menu-bg {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 55px;
+      background: #111;
+      border-radius: 20px;
+      transition: top 0.3s cubic-bezier(0.4,0,0.2,1);
+    }
+    .cap-menu-inner {
+      position: absolute;
+      left: 20px;
+      top: 8px;
+      width: 280px;
+      display: flex;
+      flex-direction: column;
+    }
+    .cap-item {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      align-items: center;
+      cursor: pointer;
+    }
+    .cap-item + .cap-item {
+      padding-top: 16px;
+    }
+    .cap-item-name {
+      font-family: 'Pretendard Variable', sans-serif;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 32px;
+      text-align: center;
+      width: 100%;
+      letter-spacing: -0.6px;
+      color: #fff;
+      mix-blend-mode: exclusion;
+    }
+    .cap-divider {
+      width: 100%;
+      height: 1px;
+      background: #e1e1e1;
+    }
+    .cap-desc {
+      position: absolute;
+      left: 180px;
+      top: 964px;
+      width: 300px;
+      font-family: 'Pretendard Variable', sans-serif;
+      font-size: 16px;
+      line-height: 24px;
+      color: #4a4a4a;
+      letter-spacing: -0.4px;
+      transform: translateY(-100%);
+    }
+
+
+    /* ── 섹션 13: Full-Power Mini ── */
+    .s13-section {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      margin: 0 auto;
+      background: #f1f1f5;
+      overflow: hidden;
+    }
+    .s13-card {
+      position: absolute;
+      left: 160px;
+      top: 304px;
+      width: 1260px;
+      height: 660px;
+      border-radius: 20px;
+      box-shadow: 0px 2px 4px rgba(0,0,0,0.12);
+      overflow: hidden;
+      background: #ccc;
+    }
+    .s13-card img,
+    .s13-card video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .s13-title {
+      position: absolute;
+      right: 159px;
+      top: 160px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 100px;
+      line-height: 100px;
+      color: #111;
+      text-align: right;
+      text-transform: uppercase;
+      white-space: nowrap;
+      z-index: 1;
+    }
+    .s13-menu {
+      position: absolute;
+      left: 1440px;
+      top: 376px;
+      width: 320px;
+      height: 299px;
+    }
+    .s13-menu-bg {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 56px;
+      background: #111;
+      border-radius: 20px;
+      transition: top 0.3s cubic-bezier(0.4,0,0.2,1);
+    }
+    .s13-menu-inner {
+      position: absolute;
+      left: 20px;
+      top: 8px;
+      width: 280px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .s13-item {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      align-items: center;
+      cursor: pointer;
+    }
+    .s13-item-name {
+      font-family: 'Pretendard Variable', sans-serif;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 32px;
+      text-align: center;
+      width: 100%;
+      letter-spacing: -0.6px;
+      color: #fff;
+      mix-blend-mode: exclusion;
+    }
+    .s13-divider {
+      width: 100%;
+      height: 1px;
+      background: #e1e1e1;
+    }
+    .s13-desc {
+      position: absolute;
+      left: 1440px;
+      bottom: 116px;
+      width: 300px;
+      font-family: 'Pretendard Variable', sans-serif;
+      font-size: 16px;
+      line-height: 24px;
+      color: #4a4a4a;
+      letter-spacing: -0.4px;
+    }
+
+
+    /* ── 섹션 14: Get the Most Out ── */
+    .s14-section {
+      position: relative;
+      width: 1920px;
+      height: 1197px;
+      margin: 0 auto;
+      background: #f1f1f5;
+      overflow: hidden;
+    }
+    .s14-title {
+      position: absolute;
+      left: 50%;
+      top: 120px;
+      transform: translateX(-50%);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 180px;
+      line-height: 180px;
+      color: #111;
+      text-align: center;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .s14-main-img {
+      position: absolute;
+      left: calc(50% - 10px);
+      top: 317px;
+      width: 400px;
+      height: 400px;
+      transform: translateX(-50%);
+      object-fit: contain;
+      transition: opacity 0.4s ease;
+    }
+    .s14-product-name {
+      position: absolute;
+      left: 50%;
+      top: 685px;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: baseline;
+      gap: 2px;
+      white-space: nowrap;
+      color: #111;
+    }
+    .s14-product-name span {
+      font-family: 'Pretendard Variable', sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 32px;
+      letter-spacing: -0.6px;
+    }
+    .s14-product-name sup {
+      font-family: 'Pretendard Variable', sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 18px;
+      letter-spacing: -0.325px;
+    }
+    .s14-product-desc {
+      position: absolute;
+      left: 50%;
+      top: 722px;
+      transform: translateX(-50%);
+      width: 399px;
+      font-family: 'Pretendard Variable', sans-serif;
+      font-size: 16px;
+      line-height: 24px;
+      color: #111;
+      text-align: center;
+      letter-spacing: -0.4px;
+    }
+    .s14-track-wrap {
+      position: absolute;
+      left: 20px;
+      top: 830px;
+      width: calc(1920px - 40px);
+      overflow: visible;
+    }
+    .s14-track {
+      display: flex;
+      gap: 21px;
+      transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
+    }
+    .s14-card {
+      flex-shrink: 0;
+      width: 296px;
+      height: 354px;
+      border-radius: 10px;
+      box-shadow: 0px 2px 4px rgba(0,0,0,0.08);
+      overflow: hidden;
+      opacity: 0.8;
+      cursor: pointer;
+      transition: opacity 0.3s ease;
+      background: rgba(0,0,0,0.04);
+    }
+    .s14-card.active {
+      opacity: 1;
+      background: #ffffff;
+    }
+    .s14-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+    .s14-btn {
+      position: absolute;
+      top: 515px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.3);
+      backdrop-filter: blur(10px);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6.25px;
+    }
+    .s14-btn img {
+      width: 37.5px;
+      height: 37.5px;
+    }
+    .s14-btn-prev {
+      left: 305px;
+      transform: rotate(180deg);
+    }
+    .s14-btn-next {
+      left: 1565px;
+    }
+
+    /* ── 섹션 15: DJI Mini 4 Pro ── */
+    .s15-section {
+      position: relative;
+      width: 1920px;
+      height: 1907px;
+      margin: 0 auto;
+      background: #f1f1f5;
+      overflow: hidden;
+    }
+    .s15-title {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 140px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 240px;
+      line-height: 240px;
+      color: #111;
+      text-align: center;
+      text-transform: uppercase;
+      white-space: nowrap;
+      pointer-events: none;
+      user-select: none;
+    }
+    .s15-drone {
+      position: absolute;
+      left: 226px;
+      top: -174px;
+      width: 1468px;
+      height: 1468px;
+      object-fit: contain;
+    }
+    .s15-subtitle {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 923px;
+      font-family: 'Pretendard Variable', sans-serif;
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 32px;
+      letter-spacing: -0.6px;
+      color: #4a4a4a;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .s15-price {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 1003px;
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+      white-space: nowrap;
+    }
+    .s15-price-label {
+      font-family: 'Pretendard Variable', sans-serif;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 32px;
+      letter-spacing: -0.6px;
+      color: #111;
+      text-transform: uppercase;
+    }
+    .s15-price-value {
+      font-family: 'Pretendard Variable', sans-serif;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 32px;
+      letter-spacing: -0.6px;
+      color: #0070d5;
+    }
+    .s15-btn {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 1055px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: #111;
+      border-radius: 100px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .s15-btn img {
+      width: 24px;
+      height: 24px;
+    }
+    .s15-btn span {
+      font-family: 'Pretendard', sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 32px;
+      letter-spacing: -0.6px;
+      color: #fff;
+      white-space: nowrap;
+    }
+    .s15-specs {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 1271px;
+      display: flex;
+      flex-direction: column;
+      gap: 80px;
+      align-items: center;
+    }
+    .s15-specs-row {
+      display: flex;
+      gap: 130px;
+      align-items: flex-start;
+    }
+    .s15-spec-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      width: 328px;
+    }
+    .s15-spec-icon {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+    }
+    .s15-spec-text {
+      font-family: 'Pretendard Variable', sans-serif;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 32px;
+      letter-spacing: -0.6px;
+      color: #4a4a4a;
+      text-align: center;
+      text-transform: uppercase;
+      width: 328px;
+    }
+
+    /* ── 섹션 16: Footer ── */
+    .s16-section {
+      position: relative;
+      width: 1920px;
+      height: 708px;
+      margin: 0 auto;
+      background: #000;
+      overflow: hidden;
+    }
+    .s16-divider {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1840px;
+      height: 2px;
+      background: #444;
+    }
+    .s16-logo {
+      position: absolute;
+      left: 40px;
+      top: 60px;
+      width: 229px;
+      height: 132px;
+      object-fit: contain;
+    }
+    .s16-nav {
+      position: absolute;
+      left: 288px;
+      top: 178px;
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+    .s16-nav a {
+      font-family: 'Pretendard', sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: -0.4px;
+      color: #fff;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .s16-col {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .s16-col-title {
+      font-family: 'Pretendard', sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: -0.4px;
+      color: #fff;
+    }
+    .s16-col-links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .s16-col-links a {
+      font-family: 'Pretendard', sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 18px;
+      letter-spacing: -0.325px;
+      color: #aaa;
+      text-decoration: none;
+    }
+    .s16-subscribe-label {
+      position: absolute;
+      left: 1287px;
+      top: 264px;
+      font-family: 'Pretendard', sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: -0.4px;
+      color: #fff;
+    }
+    .s16-subscribe-desc {
+      position: absolute;
+      left: 1287px;
+      top: 300px;
+      font-family: 'Pretendard', sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 18px;
+      letter-spacing: -0.325px;
+      color: #aaa;
+      width: 294px;
+    }
+    .s16-subscribe-form {
+      position: absolute;
+      left: 1287px;
+      top: 335px;
+      display: flex;
+      gap: 0;
+    }
+    .s16-subscribe-input {
+      width: 296px;
+      height: 40px;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 10px;
+      padding: 0 11px;
+      font-family: 'Pretendard', sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 18px;
+      letter-spacing: -0.325px;
+      color: #444;
+      outline: none;
+    }
+    .s16-subscribe-input::placeholder { color: #444; }
+    .s16-subscribe-btn {
+      position: absolute;
+      left: 300px;
+      top: 0;
+      width: 80px;
+      height: 40px;
+      background: #222;
+      border: none;
+      border-radius: 10px;
+      font-family: 'Pretendard', sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 18px;
+      letter-spacing: -0.325px;
+      color: #fff;
+      cursor: pointer;
+    }
+    .s16-checkbox-wrap {
+      position: absolute;
+      left: 1287px;
+      top: 402px;
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+    }
+    .s16-checkbox {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      border: 1px solid #222;
+      border-radius: 4px;
+      background: transparent;
+      cursor: pointer;
+      margin-top: 1px;
+    }
+    .s16-checkbox-text {
+      font-family: 'Pretendard', sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 18px;
+      letter-spacing: -0.325px;
+      color: #fff;
+      width: 274px;
+    }
+    .s16-bottom-left {
+      position: absolute;
+      left: 40px;
+      top: 630px;
+      display: flex;
+      gap: 60px;
+      align-items: center;
+    }
+    .s16-legal {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .s16-legal a, .s16-copyright {
+      font-family: 'Pretendard', sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 18px;
+      letter-spacing: -0.325px;
+      color: #444;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .s16-legal-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: #444;
+      flex-shrink: 0;
+    }
+    .s16-social {
+      position: absolute;
+      left: 1736px;
+      top: 630px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+    .s16-social a img {
+      width: 24px;
+      height: 24px;
+      display: block;
+    }
+
+    /* ── SCROLL INDICATOR (fixed) ── */
+    .scroll-indicator {
+      position: fixed;
+      bottom: 20px;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      z-index: 100;
+      pointer-events: none;
+      mix-blend-mode: exclusion;
+      transform: translateZ(0);
+      will-change: transform;
+      backface-visibility: hidden;
+    }
+
+    .scroll-tagline {
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 18px;
+      letter-spacing: -0.325px;
+      color: #fff;
+      white-space: nowrap;
+    }
+
+    .scroll-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .scroll-label {
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 18px;
+      letter-spacing: -0.325px;
+      color: #fff;
+      white-space: nowrap;
+    }
+
+    .scroll-line {
+      width: 200px;
+      height: 2px;
+      background: #2f2f2f;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .scroll-line-fill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 0%;
+      background: #ffffff;
+      transition: width 0.1s linear;
+    }
+
+    .scroll-percent {
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 18px;
+      letter-spacing: -0.325px;
+      color: #fff;
+      white-space: nowrap;
+      min-width: 28px;
+    }
+
+    /* ── 반응형 Scale Wrapper ── */
+    #scale-wrap {
+      width: 1920px;
+      transform-origin: top left;
+      position: relative;
+    }
+    body { overflow-x: hidden; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .navbar { padding: 0 16px; }
+    }
+  
